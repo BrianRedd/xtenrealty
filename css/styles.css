@@ -1,0 +1,82 @@
+/*--------------------------------------------------------
+* Filename: styles.scss
+* Description: General styles for XTEN Realty
+
+* Author: R. Brian Redd 
+--------------------------------------------------------*/
+/*Variables*/
+/*Mixins*/
+/*Main CSS*/
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+html, body {
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-family: 'Lato', sans-serif; }
+
+.navbar {
+  background-color: #FFF;
+  height: 100px;
+  border-bottom: 1px solid #AAA;
+  padding: 0px;
+  margin: 0px;
+  color: #323232; }
+  .navbar .logo {
+    height: 78px;
+    width: 334px; }
+    .navbar .logo img {
+      margin-left: 37px;
+      height: 76px;
+      width: 334px; }
+  .navbar .navbar-links {
+    position: absolute;
+    right: 29px; }
+    .navbar .navbar-links .permlinks {
+      position: absolute;
+      right: 0px;
+      top: 2px;
+      font-size: 0.8em; }
+      .navbar .navbar-links .permlinks .nav-item {
+        margin-left: 11px;
+        width: 66px;
+        text-kerning: auto; }
+        .navbar .navbar-links .permlinks .nav-item .nav-link {
+          color: #666;
+          text-align: center; }
+        .navbar .navbar-links .permlinks .nav-item .nav-link:hover {
+          background-color: #EEE;
+          border-radius: 3px; }
+    .navbar .navbar-links #linksbar {
+      font-weight: bold;
+      font-size: 1.05em;
+      margin-top: 50px; }
+      .navbar .navbar-links #linksbar .nav-link {
+        color: #323232;
+        margin-left: 32px; }
+      .navbar .navbar-links #linksbar .nav-link:hover {
+        color: #237377; }
+
+.jumbotron {
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  width: 100%;
+  top: 100px;
+  background-color: #EEE;
+  height: 278px;
+  background-image: url("../img/QS_BG.png");
+  background-repeat-y: no-repeat;
+  background-position: top;
+  border-radius: 0px; }
+
+.footer {
+  position: absolute;
+  bottom: 0px;
+  padding: 0px;
+  margin: 0px;
+  background-color: #2399A6;
+  height: 150px;
+  width: 100%;
+  color: #FFF; }

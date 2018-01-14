@@ -1,0 +1,42 @@
+{
+  "name": "booj_codechallenge",
+  "version": "1.0.0",
+  "description": "XTEN Realty",
+  "main": "index.html",
+  "scripts": {
+    "start": "npm run watch:all",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server",
+	"scss": "node-sass -o css/ css/",
+    "watch:scss": "onchange \"css/*.scss\" -- npm run scss",
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\"",
+    "clean": "rimraf dist",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
+    "imagemin": "imagemin img/* -o dist/img",
+    "usemin": "usemin index.html -d dist --htmlmin -o dist/index.html",
+    "build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrianRedd/xtenrealty.git"
+  },
+  "author": "R Brian Redd",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrianRedd/xtenrealty/issues"
+  },
+  "homepage": "https://github.com/BrianRedd/xtenrealty",
+  "dependencies": {
+    "bootstrap": "^4.0.0-alpha.6",
+    "cssmin": "^0.4.3",
+    "font-awesome": "^4.7.0",
+    "htmlmin": "0.0.7",
+    "lite-server": "^2.3.0",
+    "node-sass": "^4.7.2",
+    "onchange": "^3.3.0",
+    "parallelshell": "^3.0.2",
+    "rimraf": "^2.6.2",
+    "uglify-js": "^3.3.6",
+    "usemin-cli": "^0.5.1"
+  }
+}

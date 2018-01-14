@@ -1,0 +1,122 @@
+/*--------------------------------------------------------
+* Filename: styles.scss
+* Description: General styles for XTEN Realty
+
+* Author: R. Brian Redd 
+--------------------------------------------------------*/
+/*Variables*/
+$colormain: #FFF;
+$colorheader: #EEE;
+$colorfooter: #2399A6;
+$colorteal: #237377;
+$fontdark: #323232;
+$fontgrey: #666;
+$fontltgrey: #AAA;
+$fontwhite: #FFFEFE;
+
+$nb_height: 100px;
+$nb_height_mobile: $nb_height / 2;
+$hd_height: 278px;
+$hd_height_mobile: 768px;
+$ft_height: 150px;
+$ft_height_mobile: 279px;
+
+$maxwidth: 100%;
+
+/*Mixins*/
+
+@mixin zeromargin ($p,$m) {
+	padding: $p;
+	margin: $m;
+}
+
+@mixin logosize($h,$w) {
+	height: $h;
+	width: $w;
+}
+
+/*Main CSS*/
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	@include zeromargin(0px,0px);
+	font-family: 'Lato', sans-serif;
+}
+
+.navbar {
+	background-color: $colormain;
+	height: $nb_height;
+	border-bottom: 1px solid #AAA;
+	@include zeromargin(0px,0px);
+	color: #323232;
+	.logo {
+		@include logosize(78px,334px);
+		img {
+			margin-left: 37px;
+			@include logosize(76px,334px);
+		}
+	}
+	.navbar-links {
+		position: absolute;
+		right: 29px;
+		.permlinks {
+			position: absolute;
+			right: 0px;
+			top: 2px;
+			font-size: 0.8em;
+			.nav-item {
+				margin-left: 11px;
+				width: 66px;
+				text-kerning: auto;
+				.nav-link {
+					color: $fontgrey;
+					text-align: center;
+				}
+				.nav-link:hover {
+					background-color: $colorheader;
+					border-radius: 3px;
+				}
+			}
+		} 
+		#linksbar {
+			font-weight: bold;
+			font-size: 1.05em;
+			margin-top: 50px;
+			.nav-link {
+				color: $fontdark;
+				margin-left: 32px;
+			}
+			.nav-link:hover {
+				color: $colorteal;
+			}
+		}
+	}
+}
+
+.jumbotron {
+	@include zeromargin(0px,0px);
+	position: relative;
+	width: $maxwidth;
+	top: $nb_height;
+	background-color: $colorheader;
+	height: $hd_height;
+	background-image: url('../img/QS_BG.png');
+	background-repeat-y: no-repeat;
+	background-position: top;
+	border-radius: 0px;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0px;
+	@include zeromargin(0px,0px);
+	background-color: $colorfooter;
+	height: $ft_height;
+	width: $maxwidth;
+	color: $colormain;
+}
+
+
