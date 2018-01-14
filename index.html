@@ -33,8 +33,7 @@
 			<div id="linksbar" class="collapse navbar-collapse">
 				<ul class="navbar-nav">
 					<li class="nav-item"><a class="nav-link" href="./search.html">SEARCH</a></li>
-					<li class="nav-item"><a class="nav-link" href="./communities.html">
-					COMMUNITIES</a></li>
+					<li class="nav-item"><a class="nav-link" href="./communities.html">COMMUNITIES</a></li>
 					<li class="nav-item"><a class="nav-link" href="./services.html">SERVICES</a></li>
 					<li class="nav-item"><a class="nav-link" href="./aboutus.html">ABOUT US</a></li>
 				</ul>
@@ -44,16 +43,63 @@
 	
 	<header id="hero" class="jumbotron">
 		<div class="container">
+			<div class="row col-12 quicksearch">
+				<div class="row col-6">
+					<form name="quicksearch" class="col-12">
+						<div class="row form-group">
+							<div class="col-6">
+								<input type="text" class="form-control" id="add_search" placeholder="Address, City, Zip, or MLS#">
+							</div>
+							<div class="col-5">
+								<button type="button" class="btn search_btn">Search</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="row col-6 srch_opts">
+					<a class="col-4">NEW LISTINGS</a>
+					<a class="col-4">OPEN HOUSES</a>
+					<a class="col-3">MAP SEARCH</a>
+				</div> 			
+			</div>
+			<div class="row col-12 bio">
+				<div class="col-3">
+					<img src="img/janesmith.jpg" class="headshot">
+				</div>
+				<div class="col-3 offset-1">
+					<div class="namecard">
+						<h2>Jane Smith</h2>
+						<p>REALTOR&reg;</p>
+						<button type="button" class="btn contact_btn">Contact Me</button>
+						<div class="socialicons d-flex justify-content-between">
+							<a href="https://www.facebook.com/boojers/"><span class="fa fa-facebook-f" target="_blank"></span></a>
+							<a href="https://www.linkedin.com/company/139521/"><span class="fa fa-linkedin" target="_blank"></span></a>
+							<a href="https://twitter.com/boojers"><span class="fa fa-twitter" target="_blank"></span></a>
+							<a href="https://www.youtube.com/boojvideo"><span class="fa fa-youtube" target="_blank"></span></a>
+							<a href="https://www.instagram.com/explore/locations/93216959/booj/?hl=en" target="_blank"><span class="fa fa-instagram"></span></a>
+						</div>
+					</div>
+				</div>
+				<div class="col-4 offset-1">
+					<div class="contactlinks">
+						<p><a href="tel:5308302150"><span class="cust_icon icon_contact"></span> 530.830.2150</a></p>
+						<p><a href="#"><span class="cust_icon icon_webpage"></span> Visit my website</a></p>
+						<p><a href="#"><span class="cust_icon icon_office"></span> Denver office</a></p>
+						<p><a href="#"><span class="cust_icon icon_newsletter"></span> eNewsletter Sign Up</a></p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</header>
 	
 	<div id="content" class="container">
+		
 	</div>
 	
-	<footer id="footer" class="footer">
+	<!--footer id="footer" class="footer">
 		<div class="container">
 		</div>
-	</footer>
+	</footer-->
 	
 	<!-- SCRIPTS -->
 	<!-- build:js js/main.js -->

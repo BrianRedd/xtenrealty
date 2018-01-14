@@ -16,10 +16,12 @@ $fontwhite: #FFFEFE;
 
 $nb_height: 100px;
 $nb_height_mobile: $nb_height / 2;
-$hd_height: 278px;
+$hd_height: 422px;
 $hd_height_mobile: 768px;
 $ft_height: 150px;
 $ft_height_mobile: 279px;
+
+$qs_height: 62px;
 
 $maxwidth: 100%;
 
@@ -33,6 +35,44 @@ $maxwidth: 100%;
 @mixin logosize($h,$w) {
 	height: $h;
 	width: $w;
+}
+
+@mixin nav_hover {
+	color: $colorteal;
+	background-color: $colorheader;
+	border-radius: 3px;
+}
+
+@mixin hs_lg {
+	width: 264px;
+	height: $hd_height - $qs_height;
+}
+
+/*Custom Icons*/
+
+.cust_icon {
+	display: inline-block;
+	width: 24px;
+	height: 23px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.icon_contact {
+	background-image: url("../img/contact_teal.svg");
+}
+
+.icon_webpage {
+	background-image: url("../img/website_teal.svg");
+}
+
+.icon_office {
+	background-image: url("../img/office_teal.png");
+}
+
+.icon_newsletter {
+	background-image: url("../img/enewsletter_teal.png");
 }
 
 /*Main CSS*/
@@ -76,8 +116,7 @@ html, body {
 					text-align: center;
 				}
 				.nav-link:hover {
-					background-color: $colorheader;
-					border-radius: 3px;
+					@include nav_hover;
 				}
 			}
 		} 
@@ -90,9 +129,34 @@ html, body {
 				margin-left: 32px;
 			}
 			.nav-link:hover {
-				color: $colorteal;
+				@include nav_hover;
 			}
 		}
+	}
+}
+
+/*Updated media queries*/
+
+@media (min-width: 768px) {
+	.container {
+		width: 769px;
+		left: 13px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+
+@media (min-width: 992px) {
+	.container {
+		width: 974px;
+		left: 16px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.container {
+		width: 1180px;
+		left: 16px;
 	}
 }
 
@@ -107,6 +171,124 @@ html, body {
 	background-repeat-y: no-repeat;
 	background-position: top;
 	border-radius: 0px;
+	height: 422px;
+	.btn {
+		background-color: $colorteal;
+		text-align: center;
+		color: #FFF;
+		font-size: 1.1rem;
+		cursor: pointer;
+	}
+	.btn:hover {
+		background-color:$colorfooter;
+	}
+	.quicksearch {
+		height: $qs_height;
+		line-height: 40px;
+		align-items: center;
+		form {
+			height: 40px;
+			padding-left: 0px;
+			input {
+				border-radius: 0px;
+				width: 265px;
+				height: 40px;
+				font-size: 0.9em;
+			}
+			.search_btn {
+				width: 166px;
+				height: 39px;
+				margin-top: -3px;
+				margin-left: 14px;
+			}
+		}
+		.srch_opts {
+			margin-left: 0px;
+			a {
+				font-weight: bold;
+				margin-left: 14px;
+				color: #FFF;
+				text-decoration: underline;
+				cursor: pointer;
+			}
+			a:hover {
+				color: $colorteal;
+			}
+		}
+	}
+	.bio {
+		.headshot {
+			position: relative;
+			left: -14px;
+			@include hs_lg;
+		}
+		.namecard {
+			margin-left: -6px;
+			padding-top: 75px;
+			h2 {
+				margin-left: -2px;
+				font-size: 2.45rem;
+			}
+			p {
+				color: $fontltgrey;
+				font-size: 0.9rem;
+				padding-top: 6px;
+			}
+			.contact_btn {
+				margin-top: 9px;
+				margin-left: 1px;
+				width: 264px;
+				height: 41px;
+			}
+			.socialicons {
+				padding-top: 20px;
+				font-size: 1.65rem;
+				a {
+					color: $fontgrey;
+				}
+				a:hover {
+					color: $colorteal;
+				}
+			}
+		}
+	}
+	.contactlinks {
+		font-size: 1.2rem;
+		font-weight: bold;
+		padding-top: 73px;
+		margin-left: 12px;
+		p {
+			a {
+				color: $colorteal;
+				span {
+					position: relative;
+					margin-right: 18px;
+					top: 4px;
+				}
+			}
+		}
+		p:hover {
+			a {
+				text-decoration: none;
+				color: $fontgrey;
+				.cust_icon {
+					opacity: 0.5;
+				}
+				.icon_contact {
+					background-image: url("../img/contact.svg");
+				}
+				.icon_webpage {
+					background-image: url("../img/website.svg");
+				}
+				.icon_office {
+					background-image: url("../img/office.svg");
+				}
+				.icon_newsletter {
+					background-image: url("../img/enewsletter.svg");
+				}
+			}
+		}
+	}
 }
 
 .footer {
