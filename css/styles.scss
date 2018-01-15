@@ -175,7 +175,7 @@ html, body {
 	.btn {
 		background-color: $colorteal;
 		text-align: center;
-		color: #FFF;
+		color: $fontwhite;
 		font-size: 1.1rem;
 		cursor: pointer;
 	}
@@ -207,7 +207,7 @@ html, body {
 			a {
 				font-weight: bold;
 				margin-left: 14px;
-				color: #FFF;
+				color: $fontwhite;
 				text-decoration: underline;
 				cursor: pointer;
 			}
@@ -291,14 +291,109 @@ html, body {
 	}
 }
 
+#body {
+	margin-top: 140px;
+	padding-right: 32px;
+	.nav {
+		.nav-item {
+			padding-left: 0;
+			padding-right: 0;
+			margin-left: 0;
+			margin-right: 0;
+			text-align: center;
+			a {
+				margin-top: 2px;
+				padding-bottom: 0.4rem;
+				color: $fontltgrey;
+				font-weight: bold;
+				font-size: 1.2rem;
+				border-bottom: 2px solid $colorheader;
+			}
+			a:hover {
+				color: $colorteal;
+				
+			}
+			.active {
+				border-bottom: 2px solid $colorteal;
+				color: $colorteal;
+			}
+		}
+	}
+	.tab-content {
+		margin-top: 50px;
+		line-height: 28px;
+		padding-bottom: 40px;
+		#aboutme {
+			.aboutme {
+				padding-right: 85px;
+			}
+			.sidebar {
+				padding-left: 36px;
+				h5 {
+					font-weight: bold;
+					font-size: 1.0rem;
+					margin-top: 7px;
+				}
+				p {
+					font-size: 0.9rem;
+					padding-bottom: 24px;
+				}
+			}
+		}
+	}
+}
+
 .footer {
-	position: absolute;
-	bottom: 0px;
+	position: relative;
 	@include zeromargin(0px,0px);
 	background-color: $colorfooter;
 	height: $ft_height;
 	width: $maxwidth;
 	color: $colormain;
+	padding-top: 22px;
+	a {
+		color: $fontwhite;
+		text-decoration: none;
+	}
+	a:hover {
+		color: $fontltgrey;
+		img {
+			filter: invert(65%);
+		}
+	}
+	img {
+		filter: invert(100%);
+	}
+	.locations {
+		margin-left: -1px;
+		margin-top: 2px;
+		text-align: left;
+		img {
+			margin-right: 3px;
+			margin-top: -1;
+		}
+		.socialicons {
+			margin-top: 13px;
+			width: 265px;
+			font-size: 1.65rem;
+		}
+	}
+	.copyright {
+		text-align: right;
+		padding-right: 47px;
+		.links a {
+			text-decoration: underline;
+			padding-left: 30px;
+		}
+		.copy {
+			font-size: 0.8rem;
+			margin-top: 5px;
+			margin-bottom: 10px;
+		}
+		img {
+			margin-left: 20px;
+		}
+	}
 }
 
 

@@ -116,7 +116,7 @@ html, body {
   .jumbotron .btn {
     background-color: #237377;
     text-align: center;
-    color: #FFF;
+    color: #FFFEFE;
     font-size: 1.1rem;
     cursor: pointer; }
   .jumbotron .btn:hover {
@@ -143,7 +143,7 @@ html, body {
       .jumbotron .quicksearch .srch_opts a {
         font-weight: bold;
         margin-left: 14px;
-        color: #FFF;
+        color: #FFFEFE;
         text-decoration: underline;
         cursor: pointer; }
       .jumbotron .quicksearch .srch_opts a:hover {
@@ -200,12 +200,81 @@ html, body {
       .jumbotron .contactlinks p:hover a .icon_newsletter {
         background-image: url("../img/enewsletter.svg"); }
 
+#body {
+  margin-top: 140px;
+  padding-right: 32px; }
+  #body .nav .nav-item {
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center; }
+    #body .nav .nav-item a {
+      margin-top: 2px;
+      padding-bottom: 0.4rem;
+      color: #AAA;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-bottom: 2px solid #EEE; }
+    #body .nav .nav-item a:hover {
+      color: #237377; }
+    #body .nav .nav-item .active {
+      border-bottom: 2px solid #237377;
+      color: #237377; }
+  #body .tab-content {
+    margin-top: 50px;
+    line-height: 28px;
+    padding-bottom: 40px; }
+    #body .tab-content #aboutme .aboutme {
+      padding-right: 85px; }
+    #body .tab-content #aboutme .sidebar {
+      padding-left: 36px; }
+      #body .tab-content #aboutme .sidebar h5 {
+        font-weight: bold;
+        font-size: 1.0rem;
+        margin-top: 7px; }
+      #body .tab-content #aboutme .sidebar p {
+        font-size: 0.9rem;
+        padding-bottom: 24px; }
+
 .footer {
-  position: absolute;
-  bottom: 0px;
+  position: relative;
   padding: 0px;
   margin: 0px;
   background-color: #2399A6;
   height: 150px;
   width: 100%;
-  color: #FFF; }
+  color: #FFF;
+  padding-top: 22px; }
+  .footer a {
+    color: #FFFEFE;
+    text-decoration: none; }
+  .footer a:hover {
+    color: #AAA; }
+    .footer a:hover img {
+      filter: invert(65%); }
+  .footer img {
+    filter: invert(100%); }
+  .footer .locations {
+    margin-left: -1px;
+    margin-top: 2px;
+    text-align: left; }
+    .footer .locations img {
+      margin-right: 3px;
+      margin-top: -1; }
+    .footer .locations .socialicons {
+      margin-top: 13px;
+      width: 265px;
+      font-size: 1.65rem; }
+  .footer .copyright {
+    text-align: right;
+    padding-right: 47px; }
+    .footer .copyright .links a {
+      text-decoration: underline;
+      padding-left: 30px; }
+    .footer .copyright .copy {
+      font-size: 0.8rem;
+      margin-top: 5px;
+      margin-bottom: 10px; }
+    .footer .copyright img {
+      margin-left: 20px; }
