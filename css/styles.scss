@@ -16,8 +16,6 @@ $fontwhite: #FFFEFE;
 
 $nb_height: 100px;
 $nb_height_mobile: $nb_height / 2;
-$hd_height: 422px;
-$hd_height_mobile: 768px;
 $ft_height: 150px;
 $ft_height_mobile: 279px;
 
@@ -32,7 +30,7 @@ $maxwidth: 100%;
 	margin: $m;
 }
 
-@mixin logosize($h,$w) {
+@mixin imagesize($h,$w) {
 	height: $h;
 	width: $w;
 }
@@ -40,12 +38,7 @@ $maxwidth: 100%;
 @mixin nav_hover {
 	color: $colorteal;
 	background-color: $colorheader;
-	border-radius: 3px;
-}
-
-@mixin hs_lg {
-	width: 264px;
-	height: $hd_height - $qs_height;
+	border-radius: 2px;
 }
 
 /*Custom Icons*/
@@ -86,31 +79,24 @@ html, body {
 	font-family: 'Lato', sans-serif;
 }
 
+.widen {
+	display:inline-block;
+	-webkit-transform:scale(1.1,1); /* Safari and Chrome */
+	-moz-transform:scale(1.1,1); /* Firefox */
+	-ms-transform:scale(1.1,1); /* IE 9 */
+	-o-transform:scale(1.1,1); /* Opera */
+	transform:scale(1.1,1); /* W3C */
+}
+
 .navbar {
 	background-color: $colormain;
-	height: $nb_height;
 	border-bottom: 1px solid #AAA;
-	@include zeromargin(0px,0px);
-	color: #323232;
-	.logo {
-		@include logosize(78px,334px);
-		img {
-			margin-left: 37px;
-			@include logosize(76px,334px);
-		}
-	}
+	color: $fontdark;
 	.navbar-links {
 		position: absolute;
-		right: 29px;
 		.permlinks {
 			position: absolute;
-			right: 0px;
-			top: 2px;
-			font-size: 0.8em;
 			.nav-item {
-				margin-left: 11px;
-				width: 66px;
-				text-kerning: auto;
 				.nav-link {
 					color: $fontgrey;
 					text-align: center;
@@ -123,40 +109,13 @@ html, body {
 		#linksbar {
 			font-weight: bold;
 			font-size: 1.05em;
-			margin-top: 50px;
 			.nav-link {
 				color: $fontdark;
-				margin-left: 32px;
 			}
 			.nav-link:hover {
 				@include nav_hover;
 			}
 		}
-	}
-}
-
-/*Updated media queries*/
-
-@media (min-width: 768px) {
-	.container {
-		width: 769px;
-		left: 13px;
-		padding-left: 0px;
-		padding-right: 0px;
-	}
-}
-
-@media (min-width: 992px) {
-	.container {
-		width: 974px;
-		left: 16px;
-	}
-}
-
-@media (min-width: 1200px) {
-	.container {
-		width: 1180px;
-		left: 16px;
 	}
 }
 
@@ -166,12 +125,9 @@ html, body {
 	width: $maxwidth;
 	top: $nb_height;
 	background-color: $colorheader;
-	height: $hd_height;
-	background-image: url('../img/QS_BG.png');
 	background-repeat-y: no-repeat;
 	background-position: top;
 	border-radius: 0px;
-	height: 422px;
 	.btn {
 		background-color: $colorteal;
 		text-align: center;
@@ -188,25 +144,21 @@ html, body {
 		align-items: center;
 		form {
 			height: 40px;
-			padding-left: 0px;
 			input {
-				border-radius: 0px;
-				width: 265px;
 				height: 40px;
+				border: none;
+				border-radius: 0px;
 				font-size: 0.9em;
 			}
 			.search_btn {
-				width: 166px;
-				height: 39px;
-				margin-top: -3px;
-				margin-left: 14px;
+				height: 40px;
 			}
 		}
 		.srch_opts {
-			margin-left: 0px;
+			display: flex;
+			justify-content: space-between;
 			a {
 				font-weight: bold;
-				margin-left: 14px;
 				color: $fontwhite;
 				text-decoration: underline;
 				cursor: pointer;
@@ -219,29 +171,18 @@ html, body {
 	.bio {
 		.headshot {
 			position: relative;
-			left: -14px;
-			@include hs_lg;
 		}
 		.namecard {
-			margin-left: -6px;
-			padding-top: 75px;
 			h2 {
-				margin-left: -2px;
 				font-size: 2.45rem;
 			}
 			p {
 				color: $fontltgrey;
 				font-size: 0.9rem;
-				padding-top: 6px;
 			}
 			.contact_btn {
-				margin-top: 9px;
-				margin-left: 1px;
-				width: 264px;
-				height: 41px;
 			}
 			.socialicons {
-				padding-top: 20px;
 				font-size: 1.65rem;
 				a {
 					color: $fontgrey;
@@ -253,17 +194,14 @@ html, body {
 		}
 	}
 	.contactlinks {
-		font-size: 1.2rem;
+		font-size: 1.1rem;
 		font-weight: bold;
-		padding-top: 73px;
-		margin-left: 12px;
 		p {
+			margin-bottom: 0.9rem;
 			a {
 				color: $colorteal;
 				span {
 					position: relative;
-					margin-right: 18px;
-					top: 4px;
 				}
 			}
 		}
@@ -292,21 +230,14 @@ html, body {
 }
 
 #body {
-	margin-top: 140px;
-	padding-right: 32px;
 	.nav {
 		.nav-item {
-			padding-left: 0;
-			padding-right: 0;
-			margin-left: 0;
-			margin-right: 0;
 			text-align: center;
 			a {
-				margin-top: 2px;
 				padding-bottom: 0.4rem;
 				color: $fontltgrey;
 				font-weight: bold;
-				font-size: 1.2rem;
+				font-size: 1.1rem;
 				border-bottom: 2px solid $colorheader;
 			}
 			a:hover {
@@ -320,23 +251,16 @@ html, body {
 		}
 	}
 	.tab-content {
-		margin-top: 50px;
-		line-height: 28px;
-		padding-bottom: 40px;
 		#aboutme {
 			.aboutme {
-				padding-right: 85px;
 			}
 			.sidebar {
-				padding-left: 36px;
 				h5 {
 					font-weight: bold;
 					font-size: 1.0rem;
-					margin-top: 7px;
 				}
 				p {
 					font-size: 0.9rem;
-					padding-bottom: 24px;
 				}
 			}
 		}
@@ -345,12 +269,8 @@ html, body {
 
 .footer {
 	position: relative;
-	@include zeromargin(0px,0px);
 	background-color: $colorfooter;
-	height: $ft_height;
-	width: $maxwidth;
 	color: $colormain;
-	padding-top: 22px;
 	a {
 		color: $fontwhite;
 		text-decoration: none;
@@ -365,35 +285,277 @@ html, body {
 		filter: invert(100%);
 	}
 	.locations {
-		margin-left: -1px;
-		margin-top: 2px;
 		text-align: left;
 		img {
-			margin-right: 3px;
-			margin-top: -1;
 		}
 		.socialicons {
-			margin-top: 13px;
-			width: 265px;
 			font-size: 1.65rem;
 		}
 	}
 	.copyright {
 		text-align: right;
-		padding-right: 47px;
 		.links a {
 			text-decoration: underline;
-			padding-left: 30px;
 		}
 		.copy {
 			font-size: 0.8rem;
-			margin-top: 5px;
-			margin-bottom: 10px;
 		}
 		img {
-			margin-left: 20px;
 		}
 	}
 }
+
+/*Updated media queries*/
+
+/*x-small*/
+@media (max-width: 768px) {
+	.container {
+		width: 100%;
+	}
+}
+
+/*small*/
+@media (min-width: 768px) {
+	.container {
+		width: 769px;
+		left: 13px;
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+	.footer {
+		height: $ft_height;
+		width: $maxwidth;
+		padding-top: 22px;
+		.locations {
+			margin-left: -1px;
+			margin-top: 2px;
+			img {
+				margin-right: 3px;
+				margin-top: -1;
+			}
+			.socialicons {
+				margin-top: 13px;
+			}
+		}
+		.copyright {
+			padding-right: 47px;
+			.links a {
+				padding-left: 30px;
+			}
+			.copy {
+				margin-top: 5px;
+				margin-bottom: 10px;
+			}
+			img {
+				margin-left: 20px;
+			}
+		}
+	}
+}
+
+/*medium*/
+@media (min-width: 992px) {
+	.container {
+		width: 974px;
+		left: 16px;
+	}
+	.navbar {
+		height: $nb_height;
+		@include zeromargin(0px,0px);
+		.logo {
+			@include imagesize(78px,334px);
+			img {
+				margin-left: 37px;
+				@include imagesize(76px,334px);
+			}
+		}
+	}
+	.navbar {
+		.navbar-links {
+			right: 29px;
+			.permlinks {
+				right: 0px;
+				top: 2px;
+				font-size: 0.8em;
+				.nav-item {
+					margin-left: 11px;
+					width: 66px;
+				}
+			} 
+			#linksbar {
+				margin-top: 50px;
+				.nav-link {
+					margin-left: 32px;
+				}
+				.nav-link:hover {
+					@include nav_hover;
+				}
+			}
+		}
+	}
+	.jumbotron {
+		background-image: url('../img/QS_BG.png');
+		height: 354px;
+		.quicksearch {
+			form {
+				padding-left: 0px;
+				input {
+					width: 214px;
+				}
+				.search_btn {
+					width: 132px;
+					margin-top: -3px;
+					margin-left: 14px;
+				}
+			}
+			.srch_opts {
+				padding-left: 60px;
+				width: 482px;
+			}
+		}
+		.bio {
+			.headshot {
+				@include imagesize(293px,212px);
+				left: -14px;
+			}
+			.namecard {
+				margin-left: -6px;
+				padding-top: 39px;
+				h2 {
+					margin-left: -2px;
+				}
+				p {
+					padding-top: 6px;
+				}
+				.contact_btn {
+					width: 212px;
+					margin-top: 9px;
+					margin-left: 1px;
+					height: 41px;
+				}
+				.socialicons {
+					padding-top: 20px;
+				}
+			}
+		}
+		.contactlinks {
+			padding-top: 40px;
+			margin-left: 4px;
+			p {
+				a {
+					span {
+						margin-right: 18px;
+						top: 4px;
+					}
+				}
+			}
+		}
+	}
+	#body {
+		margin-top: 144px;
+		padding-right: 32px;
+		.nav {
+			.nav-item {
+				padding-left: 0;
+				padding-right: 0;
+				margin-left: 0;
+				margin-right: 0;
+				a {
+					margin-top: 2px;
+				}
+			}
+		}
+		.tab-content {
+			margin-top: 50px;
+			line-height: 28px;
+			padding-bottom: 40px;
+			#aboutme {
+				.aboutme {
+					padding-right: 85px;
+				}
+				.sidebar {
+					padding-left: 36px;
+					h5 {
+						margin-top: 7px;
+					}
+					p {
+						padding-bottom: 24px;
+					}
+				}
+			}
+		}
+	}
+	.footer {
+		.locations {
+			.socialicons {
+				width: 217px;
+			}
+		}
+	}
+}
+
+/*large*/
+@media (min-width: 1200px) {
+	.container {
+		width: 1180px;
+		left: 16px;
+	}
+	.jumbotron {
+		height: 421px;
+		.quicksearch {
+			form {
+				input {
+					width: 264px;
+				}
+				.search_btn {
+					width: 166px;
+				}
+			}
+			.srch_opts {
+				padding-left: 56px;
+				width: 549px;
+			}
+		}
+		.bio {
+			.headshot {
+				@include imagesize(359px,264px);
+				left: -14px;
+			}
+			.namecard {
+				padding-top: 75px;
+				h2 {
+					margin-left: -2px;
+				}
+				p {
+					padding-top: 6px;
+				}
+				.contact_btn {
+					width: 264px;
+				}
+			}
+		}
+		.contactlinks {
+			padding-top: 73px;
+			margin-left: 12px;
+			p {
+				a {
+					span {
+						margin-right: 18px;
+						top: 4px;
+					}
+				}
+			}
+		}
+	}
+	.footer {
+		.locations {
+			.socialicons {
+				width: 265px;
+			}
+		}
+	}
+}
+
+/*end media queries*/
 
 
