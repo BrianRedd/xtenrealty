@@ -15,11 +15,10 @@ $fontltgrey: #AAA;
 $fontwhite: #FFFEFE;
 
 $nb_height: 100px;
-$nb_height_mobile: 56px;
 $ft_height: 150px;
 $ft_height_mobile: 279px;
 
-$qs_height: 62px;
+$qs_height: 61px;
 
 $maxwidth: 100%;
 
@@ -30,9 +29,9 @@ $maxwidth: 100%;
 	margin: $m;
 }
 
-@mixin imagesize($h,$w) {
-	height: $h;
+@mixin imagesize($w,$h) {
 	width: $w;
+	height: $h;
 }
 
 @mixin nav_hover {
@@ -89,32 +88,76 @@ html, body {
 	transform:scale(1.1,1); /* W3C */
 }
 
+.shorten {
+	display:inline-block;
+	-webkit-transform:scale(1,0.9); /* Safari and Chrome */
+	-moz-transform:scale(1,0.9); /* Firefox */
+	-ms-transform:scale(1,0.9); /* IE 9 */
+	-o-transform:scale(1,0.9); /* Opera */
+	transform:scale(1,0.9); /* W3C */
+}
+
+/*x-small*/
+.container {
+	width: 100%;
+}
+
 .navbar {
+	position: relative;
 	background-color: $colormain;
 	border-bottom: 1px solid #AAA;
 	color: $fontdark;
-	height: $nb_height_mobile;
+	height: 50px;
 	@include zeromargin(0px,0px);
+	.logo {
+		@include imagesize(55px,33px);
+		.logo_lg {
+			display: none;
+		}
+		img {
+			margin-left: 11px;
+			margin-top: 4px;
+			@include imagesize(55px,33px);
+		}
+	}
 	.navbar-links {
 		position: absolute;
-		right: 29px;
+		right: 0px;
 		.permlinks {
+			right: 2px;
 			font-size: 0.8em;
 			position: absolute;
-			.nav-item {
-				.nav-link {
-					color: $fontgrey;
-					text-align: center;
+			.navbar-nav {
+				display: flex;
+				-webkit-box-orient: horizontal;
+				-webkit-flex-direction: row;
+				-ms-flex-direction: row;
+				flex-direction: row;
+				.nav-item {
+					margin-left: 11px;
+					width: 59px;
+					height: 45px;
+					overflow: hidden;
+					border-radius: 0px;
+					.nav-link {
+						color: $fontgrey;
+						text-align: center;
+					}
+					.nav-link:hover {
+						@include nav_hover;
+					}
 				}
-				.nav-link:hover {
-					@include nav_hover;
-				}
-			}
-		} 
+			} 
+		}
 		#linksbar {
 			font-weight: bold;
 			font-size: 1.05em;
+			margin-top: 50px;
+			margin-right: 0px;
+			background-color: $colormain;
 			.nav-link {
+				margin: 10px;
+				text-align: center;
 				color: $fontdark;
 			}
 			.nav-link:hover {
@@ -129,11 +172,12 @@ html, body {
 	@include zeromargin(0px,0px);
 	position: relative;
 	width: $maxwidth;
-	top: $nb_height_mobile;
+	//top: 50px;
 	background-color: $colorheader;
 	background-repeat-y: no-repeat;
-	background-position: top;
+	background-position: 0px -2px;
 	border-radius: 0px;
+	height: 763px;
 	.btn {
 		background-color: $colorteal;
 		text-align: center;
@@ -161,13 +205,8 @@ html, body {
 			}
 		}
 		.srch_opts {
-			display: flex;
-			justify-content: space-between;
+			display: none;
 			a {
-				font-weight: bold;
-				color: $fontwhite;
-				text-decoration: underline;
-				cursor: pointer;
 				font-size: 0.85rem;
 			}
 			a:hover {
@@ -178,6 +217,7 @@ html, body {
 	.bio {
 		.headshot {
 			position: relative;
+			@include imagesize(210px,289px);
 		}
 		.namecard {
 			h2 {
@@ -271,6 +311,14 @@ html, body {
 				}
 			}
 		}
+		#listings {
+			iframe {
+				border:0;
+				width:600px;
+				max-width:100%;
+				height:450px;
+			}
+		}
 	}
 }
 
@@ -314,15 +362,9 @@ html, body {
 
 /*Updated media queries*/
 
-/*x-small*/
-@media (max-width: 735px) {
-	.container {
-		width: 100%;
-	}
-}
 
 /*small*/
-@media (min-width: 736px) {
+@media (min-width: 727px) {
 	.container {
 		width: 769px;
 		left: 19px;
@@ -330,47 +372,39 @@ html, body {
 		padding-right: 0px;
 	}
 	.navbar {
+		height: 56px;
 		.logo {
-			@include imagesize(35px,151px);
+			@include imagesize(151px,35px);
+			.logo_lg {
+				display: block;
+			}
+			.logo_sm {
+				display: none;
+			}
 			img {
 				margin-left: 20px;
 				margin-top: 8px;
-				@include imagesize(35px,151px);
+				@include imagesize(151px,35px);
 			}
 		}
 		.navbar-links {
 			.permlinks {
-				right: -25px;
 				top: 4px;
+				right: 6px;
 				.navbar-nav {
-					display: flex;
-					-webkit-box-orient: horizontal;
-					-webkit-flex-direction: row;
-					-ms-flex-direction: row;
-					flex-direction: row;
 					.nav-item {
-						margin-left: 11px;
-						width: 66px;
-						height: 45px;
+						width: 62px;
 					}
-				} 
+				}
 			}
 			#linksbar {
-				margin-top: 55px;
-				margin-right: -29px;
-				background-color: $colormain;
-				.nav-link {
-					margin: 10px;
-					text-align: right;
-				}
-				.nav-link:hover {
-					@include nav_hover;
-				}
+				margin-top: 56px;
 			}
 		}
 	}
 	.jumbotron {
 		height: 278px;
+		//top: 56px;
 		.quicksearch {
 			form {
 				padding-left: 0px;
@@ -388,13 +422,25 @@ html, body {
 				}
 			}
 			.srch_opts {
+				display: flex;
+				justify-content: space-between;
 				padding-left: 60px;
 				width: 400px;
+				a {
+					font-weight: bold;
+					color: $fontwhite;
+					text-decoration: underline;
+					cursor: pointer;
+					font-size: 0.85rem;
+				}
+				a:hover {
+					color: $colorteal;
+				}
 			}
 		}
 		.bio {
 			.headshot {
-				@include imagesize(216px,159px);
+				@include imagesize(159px,216px);
 				left: -14px;
 			}
 			.namecard {
@@ -504,13 +550,13 @@ html, body {
 		left: 16px;
 	}
 	.navbar {
-		height: $nb_height;
+		height: 100px;
 		@include zeromargin(0px,0px);
 		.logo {
-			@include imagesize(78px,334px);
+			@include imagesize(334px,76px);
 			img {
 				margin-left: 37px;
-				@include imagesize(76px,334px);
+				@include imagesize(334px,76px);
 			}
 		}
 		.navbar-links {
@@ -535,7 +581,7 @@ html, body {
 		}
 	}
 	.jumbotron {
-		top: $nb_height;
+		//top: 100px;
 		height: 354px;
 		.quicksearch {
 			form {
@@ -550,7 +596,6 @@ html, body {
 				}
 			}
 			.srch_opts {
-				padding-left: 60px;
 				width: 482px;
 				a {
 					font-size: 1.0rem;
@@ -559,7 +604,7 @@ html, body {
 		}
 		.bio {
 			.headshot {
-				@include imagesize(293px,212px);
+				@include imagesize(212px,293px);
 				left: -14px;
 			}
 			.namecard {
@@ -655,7 +700,7 @@ html, body {
 		}
 		.bio {
 			.headshot {
-				@include imagesize(359px,264px);
+				@include imagesize(264px,359px);
 				left: -14px;
 			}
 			.namecard {

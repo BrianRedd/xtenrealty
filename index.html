@@ -21,14 +21,15 @@
 <body>
 	<nav id="navbar" class="navbar navbar-toggleable-md fixed-top">
 		<a class="navbar-brand logo" href="./index.html">
-			<img src="img/TEN-logo.svg" alt="XTEN Realty">
+			<img class="logo_sm" src="img/TEN-logo-mark.svg" alt="XTEN Realty">
+			<img class="logo_lg" src="img/TEN-logo.svg" alt="XTEN Realty">
 		</a>
 		<div class="navbar-links">
 			<div class="permlinks">
 				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="#"><img src="img/contact_teal.svg"><br/>Contact</a></li>
-					<li class="nav-item"><a class="nav-link" href="#"><img src="img/account_teal.svg"><br/>Account</a></li>
-					<li class="nav-item cust-toggler" data-toggle="collapse" data-target="#linksbar"><a class="nav-link" href="#"><img src="img/menu.png"><br/>Menu</a></li>
+					<li class="nav-item"><a class="nav-link" href="#"><img src="img/contact_teal.svg"><br/><span class="shorten">Contact</span></a></li>
+					<li class="nav-item"><a class="nav-link" href="#"><img src="img/account_teal.svg"><br/><span class="shorten">Account</span></a></li>
+					<li class="nav-item cust-toggler" data-toggle="collapse" data-target="#linksbar"><a class="nav-link" href="#"><img src="img/menu.png"><br/><span class="shorten">Menu</span></a></li>
 				</ul>
 			</div>
 			<div id="linksbar" class="collapse navbar-collapse">
@@ -52,6 +53,7 @@
 								<input type="text" class="form-control" id="add_search" placeholder="Address, City, Zip, or MLS#">
 							</div>
 							<div class="col-5">
+								<!--TO DO? Apply to MLS search?-->
 								<button type="button" class="btn search_btn"><span class="widen">Search</span></button>
 							</div>
 						</div>
@@ -69,7 +71,8 @@
 				<div class="col-3">
 					<img src="img/janesmith.jpg" class="headshot">
 				</div>
-				<div class="col-4 col-lg-3 offset-lg-1">
+				<!--TO DO: col-12 et al needs to function between 576 and 727px-->
+				<div class="col-12 col-sm-4 col-lg-3 offset-lg-1">
 					<div class="namecard">
 						<h2>Jane Smith</h2>
 						<p>REALTOR&reg;</p>
@@ -83,10 +86,11 @@
 						</div>
 					</div>
 				</div>
-				<div class="col-4 offset-lg-1">
+				<div class="col-12 col-sm-4 offset-lg-1">
 					<div class="contactlinks">
 						<p><a href="tel:5308302150"><span class="cust_icon icon_contact"></span> 530.830.2150</a></p>
 						<p><a href="#"><span class="cust_icon icon_webpage"></span> Visit my website</a></p>
+						<!--TO DO? Modal with map?-->
 						<p><a href="#"><span class="cust_icon icon_office"></span> Denver office</a></p>
 						<p><a href="#"><span class="cust_icon icon_newsletter"></span> eNewsletter Sign Up</a></p>
 					</div>
@@ -98,6 +102,7 @@
 	<div id="body" class="container">
 		<div class="row row-content">
 			<div class="col-12">
+				<!--TO DO: Drop down for small screens-->
 				<ul class="nav">
 					<li class="nav-item col-3">
 						<a class="nav-link active" href="#aboutme" role="tab" data-toggle="tab"><span class="widen">About Me</span></a>
@@ -127,7 +132,9 @@
 						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="listings">
-						<p>COMING SOON!</p>
+						<div class="row justify-content-center">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3069.8906654217185!2d-104.9155686841693!3d39.69716217945523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b840423b694bb%3A0x6e5751eb62b019df!2sbooj!5e0!3m2!1sen!2sus!4v1516247068411" frameborder="0" allowfullscreen></iframe>
+						</div>
 					</div>
 					<div role="tabpanel" class="tab-pane fade" id="solds">
 						<p>COMING SOON!</p>
