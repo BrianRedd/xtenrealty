@@ -11,7 +11,7 @@ There is also a "distribution" version (minified, uglified, cacenated, etc) here
 
 Booj JavaScript Test
 
-This is available under the JSTest folder (both here and hosted: http://rbrianredd.com/projects/xten/JSTest)
+This is available under the JSTest folder (both here and hosted: http://rbrianredd.com/projects/xten/JSTest/js_test.html)
 
 -R. Brian Redd 
 2018-01-21
