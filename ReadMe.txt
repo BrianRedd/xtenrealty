@@ -1,39 +1,17 @@
+Booj Front End Code Test, TEN Realty
 
-Git setup
----------
-git init
-git status
-git add .
-git commit -m "{message}"
-git remote add origin {url}
-git push -u origin master
+* Near pixel-perfect conversion of four PSD files into functional responsive webpage
+* Site is responsive with four breakpoints (provided by client)
+* As content for links and tabs were not provided (other than the initial "lorem ipsum" under About Me), links have either been left pointing to "#" or contain filler content.
+* One exception is the "Denver Office" link, which I took the liberty to populate a modal with a map to the office (in this case, the actual Booj office, as TEN Realty's address is fake).
+* Telephone number links are active using the "tel:" target, so can be tabbed on a mobile device to call the number
 
-NPM setup
----------
-npm init
-npm install --save-dev lite-server (NodeJS lite-server)
-npm install --save bootstrap@4.0.0-alpha.6 (Bootstrap)
-npm install --save-dev font-awesome (Font-Awesome)
-npm install --save-dev node-sass (Sass compiler)
+Hosted version is available here: http://rbrianredd.com/projects/xten/
+There is also a "distribution" version (minified, uglified, cacenated, etc) here: http://rbrianredd.com/projects/xten/dist/
 
-Deployment
-----------
-npm install --save-dev onchange parallelshell (detects changes and run parallel NPM scripts)
-npm install --save-dev rimraf (can delete/clean dist folder)
-npm -g install copyfiles (can copy files)
-npm -g install imagemin-cli (can minify website images)
-npm install --save-dev usemin-cli cssmin uglify-js htmlmin (minifies CSS, JS, HTML)
+Booj JavaScript Test
 
-NPM Scripts
------------
-"start": "npm run watch:all",
-"test": "echo \"Error: no test specified\" && exit 1",
-"lite": "lite-server",
-"scss": "node-sass -o css/ css/",
-"watch:scss": "onchange \"css/*.scss\" -- npm run scss",
-"watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\"",
-"clean": "rimraf dist",
-"copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* dist/fonts",
-"imagemin": "imagemin img/* -o dist/img",
-"usemin": "usemin {file1} -d dist --htmlmin -o dist/{file1} && usemin {file2} -d dist --htmlmin -o dist/{file2} ...",
-"build": "npm run clean && npm run copyfonts && npm run imagemin && npm run usemin"
+This is available under the JSTest folder (both here and hosted: http://rbrianredd.com/projects/xten/JSTest)
+
+-R. Brian Redd 
+2018-01-21
