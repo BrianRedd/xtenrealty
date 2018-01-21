@@ -86,6 +86,8 @@ $c_dkteal: #237377; //darker teal
 $qsh: 60px; //quicksearch height;
 $qslh: 40px; //quicksearch line-height;
 $gutter: 30px; //gutter width
+$gutter_lg: 111px; //large gutter width
+$gutter_xl: 128px; //xlarge gutter width
 
 $xs_cont: 290px; //xs container width
 $xs_navh: 50px; //xs navigation height
@@ -93,18 +95,18 @@ $xs_jumbh: 764px; //xs jumbotron height
 $xs_footh: 279px; //xs footer height
 $xs_lpad: 15px; //xs min left spacing
 
-$sm_breakpoint: 728px; //breakpoint to move from xs > sm
+$sm_breakpoint: 786px; //breakpoint to move from xs > sm
 $sm_cont: 726px; //sm container width
 $sm_navh: 54px; //sm navigation height
 $sm_jumbh: 278px; //sm jumbotron height
-$sm_footh: 151px; //sm-lg footer height
+$sm-lg_footh: 151px; //sm-lg footer height
 
-$md_breakpoint: 944px; //breakpoint to move from sm > md
+$md_breakpoint: 1000px; //breakpoint to move from sm > md
 $md_cont: 942px; //md container width
-$md_navh: 101px; //md-lg navigation height
+$md-lg_navh: 101px; //md-lg navigation height
 $md_jumbh: 355px; //md jumbotron height
 
-$lg_breakpoint: 1148px; //breakpoint to move from md > lg
+$lg_breakpoint: 1199px; //breakpoint to move from md > lg
 $lg_cont: 1146px; //lg container width
 $lg_jumbh: 421px; //lg jumbotron height
 
@@ -447,7 +449,7 @@ XS/Default size
 	height: $xs_footh;
 	background-color: $c_ltteal;
 	color: $c_white;
-	padding-top: 26px;
+	padding-top: 24px;
 	a {
 		color: $c_white;
 		text-decoration: none;
@@ -463,7 +465,7 @@ XS/Default size
 		}
 		.socialicons {
 			font-size: 1.5rem;
-			padding-top: 18px;
+			padding-top: 11px;
 		}
 	}
 	.copyright {
@@ -484,7 +486,7 @@ XS/Default size
 		.realty-icons {
 			font-size: 2.25rem;
 			span {
-				padding: 1px 9px 0px 9px; 
+				margin: 1px 9px 0px 9px; 
 			}
 		}
 	}
@@ -645,22 +647,25 @@ Media Queries
 	}
 	
 	.footer {
-		height: $sm_footh;
+		height: $sm-lg_footh;
 		.cust_container {
 			display: flex;
+			justify-content: space-between;
 			.locations {
 				width: 50%;
 				text-align: left;
-				font-size: 1.0rem;
+				font-size: 1.1rem;
 				div {
 					padding-bottom: 2px;
 				}
 				.socialicons {
-					width: 216px;
+					width: 218px;
+					margin-left: -5px;
 				}
 			}
 			.copyright {
 				width: 50%;
+				max-width: 350px;
 				text-align: right;
 				padding-top: 0px;
 				.links {
@@ -671,9 +676,217 @@ Media Queries
 					padding-top: 9px;
 				}
 				.realty-icons span {
-					padding: 1px 0px 0px 18px;
+					margin: 1px 0px 0px 18px;
 				}
 			}
 		}
 	}
 }
+
+/*MEDIUM SIZE*/
+@media (min-width: $md_breakpoint) {
+	.cust_container {
+		width: $md_cont;
+	}
+	
+	.navbar {
+		height: $md-lg_navh;
+		.logo {
+			margin-left: 39px;
+			div {
+				height: $md-lg_navh;
+				width: 330px;
+			}
+		}
+		.navbar-links {
+			.permlinks {
+				top: -3px;
+				margin-right: 35px;
+				padding-top: 0px;
+				.navbar-nav {
+					.cust-toggler {
+						display: none;
+					}
+					.nav-item {
+						margin-left: 15px;
+					}
+				}
+			}
+			#linksbar {
+				margin-top: 40px;
+				margin-right: 20px;
+				height: 45px;
+				.nav-link {
+					margin-left: 22px;
+				}
+			}
+		}
+	}
+	
+	.jumbotron {
+		height: $md_jumbh;
+		.quicksearch {
+			form {
+				input {
+					width: 213px;
+				}
+				.search_btn {
+					margin-left: $gutter_lg;
+					width: 132px;
+					
+				}
+			}
+			.srch_opts {
+				margin-left: 111px;
+				width: 428px;
+				a {
+					font-size: 1.0rem;
+				}
+			}
+		}
+		.bio {
+			.headshot {
+				@include imagesize(213px,293px);
+			}
+			.namecard {
+				margin-left: $gutter_lg;
+				margin-top: 38px;
+				.contact_btn{
+					width: 213px;
+				}
+				.socialicons {
+					width: 223px;
+				}
+			}
+			.contactlinks {
+				margin-left: $gutter_lg - 4px;
+				margin-top: 42px;
+				font-size: 1.05rem;
+				p {
+					a {
+						margin-right: 21px;
+					}
+				}
+			}
+		}
+		
+	}
+	
+	#main {
+		padding-top: 40px;
+		#desktoptabs {
+			width: $md_cont;
+			margin-bottom: 49px;
+			.nav-item {
+				a {
+					font-size: 1.2rem;
+				}
+			}
+		}
+		.tab-content {
+			#aboutme {
+				.am_container {
+					.aboutme {
+						width: 618px;
+					}
+					.sidebar {
+						margin-top: 3px;
+						margin-left: $gutter_lg;
+						p {
+							padding-bottom: 26px;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.footer {
+		.cust_container {
+			.locations {
+				.socialicons {
+					width: 218px;
+					padding-top: 12px;
+					margin-left: -6px;
+				}
+			}
+		}
+	}
+}
+
+/*LARGE SIZE*/
+@media (min-width: $lg_breakpoint) {
+	.cust_container {
+		width: $lg_cont;
+	}
+	
+	.jumbotron {
+		height: $lg_jumbh;
+		.quicksearch {
+			form {
+				input {
+					width: 264px;
+				}
+				.search_btn {
+					margin-left: $gutter;
+					width: 166px;
+					
+				}
+			}
+			.srch_opts {
+				margin-left: $gutter_xl;
+				width: 498px;
+			}
+		}
+		.bio {
+			.headshot {
+				@include imagesize(264px,362px);
+			}
+			.namecard {
+				margin-left: $gutter_xl;
+				margin-top: 75px;
+				.contact_btn{
+					width: 264px;
+				}
+				.socialicons {
+					width: 271px;
+				}
+			}
+			.contactlinks {
+				margin-left: $gutter_xl + 9px;
+				margin-top: 75px;
+			}
+		}
+		
+	}
+	
+	#main {
+		padding-top: 44px;
+		padding-bottom: 22px;
+		#desktoptabs {
+			width: $lg_cont;
+			margin-bottom: 49px;
+		}
+		.tab-content {
+			#aboutme {
+				.am_container {
+					.aboutme {
+						width: 754px;
+					}
+				}
+			}
+		}
+	}
+	
+	.footer {
+		.cust_container {
+			.locations {
+				font-size: 1.1rem;
+				.socialicons {
+					width: 270px;
+				}
+			}
+		}
+	}
+}
+

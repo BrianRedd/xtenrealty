@@ -325,7 +325,7 @@ XS/Default size
   height: 279px;
   background-color: #2399A6;
   color: #FFF;
-  padding-top: 26px; }
+  padding-top: 24px; }
   .footer a {
     color: #FFF;
     text-decoration: none; }
@@ -338,7 +338,7 @@ XS/Default size
       margin-right: 5px; }
     .footer .locations .socialicons {
       font-size: 1.5rem;
-      padding-top: 18px; }
+      padding-top: 11px; }
   .footer .copyright {
     padding-top: 16px;
     text-align: center; }
@@ -354,13 +354,13 @@ XS/Default size
     .footer .copyright .realty-icons {
       font-size: 2.25rem; }
       .footer .copyright .realty-icons span {
-        padding: 1px 9px 0px 9px; }
+        margin: 1px 9px 0px 9px; }
 
 /*
 Media Queries
 -------------*/
 /*SMALL SIZE*/
-@media (min-width: 728px) {
+@media (min-width: 786px) {
   .cust_container {
     width: 726px; }
   .hide-small {
@@ -463,17 +463,20 @@ Media Queries
   .footer {
     height: 151px; }
     .footer .cust_container {
-      display: flex; }
+      display: flex;
+      justify-content: space-between; }
       .footer .cust_container .locations {
         width: 50%;
         text-align: left;
-        font-size: 1.0rem; }
+        font-size: 1.1rem; }
         .footer .cust_container .locations div {
           padding-bottom: 2px; }
         .footer .cust_container .locations .socialicons {
-          width: 216px; }
+          width: 218px;
+          margin-left: -5px; }
       .footer .cust_container .copyright {
         width: 50%;
+        max-width: 350px;
         text-align: right;
         padding-top: 0px; }
         .footer .cust_container .copyright .links {
@@ -482,4 +485,116 @@ Media Queries
         .footer .cust_container .copyright .copy {
           padding-top: 9px; }
         .footer .cust_container .copyright .realty-icons span {
-          padding: 1px 0px 0px 18px; } }
+          margin: 1px 0px 0px 18px; } }
+
+/*MEDIUM SIZE*/
+@media (min-width: 1000px) {
+  .cust_container {
+    width: 942px; }
+  .navbar {
+    height: 101px; }
+    .navbar .logo {
+      margin-left: 39px; }
+      .navbar .logo div {
+        height: 101px;
+        width: 330px; }
+    .navbar .navbar-links .permlinks {
+      top: -3px;
+      margin-right: 35px;
+      padding-top: 0px; }
+      .navbar .navbar-links .permlinks .navbar-nav .cust-toggler {
+        display: none; }
+      .navbar .navbar-links .permlinks .navbar-nav .nav-item {
+        margin-left: 15px; }
+    .navbar .navbar-links #linksbar {
+      margin-top: 40px;
+      margin-right: 20px;
+      height: 45px; }
+      .navbar .navbar-links #linksbar .nav-link {
+        margin-left: 22px; }
+  .jumbotron {
+    height: 355px; }
+    .jumbotron .quicksearch form input {
+      width: 213px; }
+    .jumbotron .quicksearch form .search_btn {
+      margin-left: 111px;
+      width: 132px; }
+    .jumbotron .quicksearch .srch_opts {
+      margin-left: 111px;
+      width: 428px; }
+      .jumbotron .quicksearch .srch_opts a {
+        font-size: 1.0rem; }
+    .jumbotron .bio .headshot {
+      width: 213px;
+      height: 293px; }
+    .jumbotron .bio .namecard {
+      margin-left: 111px;
+      margin-top: 38px; }
+      .jumbotron .bio .namecard .contact_btn {
+        width: 213px; }
+      .jumbotron .bio .namecard .socialicons {
+        width: 223px; }
+    .jumbotron .bio .contactlinks {
+      margin-left: 107px;
+      margin-top: 42px;
+      font-size: 1.05rem; }
+      .jumbotron .bio .contactlinks p a {
+        margin-right: 21px; }
+  #main {
+    padding-top: 40px; }
+    #main #desktoptabs {
+      width: 942px;
+      margin-bottom: 49px; }
+      #main #desktoptabs .nav-item a {
+        font-size: 1.2rem; }
+    #main .tab-content #aboutme .am_container .aboutme {
+      width: 618px; }
+    #main .tab-content #aboutme .am_container .sidebar {
+      margin-top: 3px;
+      margin-left: 111px; }
+      #main .tab-content #aboutme .am_container .sidebar p {
+        padding-bottom: 26px; }
+  .footer .cust_container .locations .socialicons {
+    width: 218px;
+    padding-top: 12px;
+    margin-left: -6px; } }
+
+/*LARGE SIZE*/
+@media (min-width: 1199px) {
+  .cust_container {
+    width: 1146px; }
+  .jumbotron {
+    height: 421px; }
+    .jumbotron .quicksearch form input {
+      width: 264px; }
+    .jumbotron .quicksearch form .search_btn {
+      margin-left: 30px;
+      width: 166px; }
+    .jumbotron .quicksearch .srch_opts {
+      margin-left: 128px;
+      width: 498px; }
+    .jumbotron .bio .headshot {
+      width: 264px;
+      height: 362px; }
+    .jumbotron .bio .namecard {
+      margin-left: 128px;
+      margin-top: 75px; }
+      .jumbotron .bio .namecard .contact_btn {
+        width: 264px; }
+      .jumbotron .bio .namecard .socialicons {
+        width: 271px; }
+    .jumbotron .bio .contactlinks {
+      margin-left: 137px;
+      margin-top: 75px; }
+  #main {
+    padding-top: 44px;
+    padding-bottom: 22px; }
+    #main #desktoptabs {
+      width: 1146px;
+      margin-bottom: 49px; }
+    #main .tab-content #aboutme .am_container .aboutme {
+      width: 754px; }
+  .footer .cust_container .locations {
+    font-size: 1.1rem; }
+    .footer .cust_container .locations .socialicons {
+      width: 270px; } }
