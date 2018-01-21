@@ -121,7 +121,7 @@ a:visited {
   margin: 0px;
   background-image: url("../img/QS_BG.png");
   background-color: #EEE;
-  background-repeat-y: no-repeat;
+  background-repeat: repeat-x;
   background-position: 0px -2px; }
   #officeModal .modal-content .modal-header {
     color: #FFF; }
@@ -208,7 +208,7 @@ XS/Default size
   margin: 0px;
   background-image: url("../img/QS_BG.png");
   background-color: #EEE;
-  background-repeat-y: no-repeat;
+  background-repeat: repeat-x;
   background-position: 0px -2px;
   border-radius: 0px;
   height: 764px; }
