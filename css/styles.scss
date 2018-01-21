@@ -126,9 +126,10 @@ $lg_jumbh: 421px; //lg jumbotron height
 	background-color: $c_vlgray;
 }
 
-/**/
+/*
+General CSS
+-----------*/
 
-/*Main CSS*/
 *, *:before, *:after {
 	box-sizing: border-box;
 }
@@ -150,29 +151,29 @@ a:visited {
 
 .widen {
 	display:inline-block;
-	-webkit-transform:scale(1.1,1); /* Safari and Chrome */
-	-moz-transform:scale(1.1,1); /* Firefox */
-	-ms-transform:scale(1.1,1); /* IE 9 */
-	-o-transform:scale(1.1,1); /* Opera */
-	transform:scale(1.1,1); /* W3C */
+	-webkit-transform:scale(1.1,1); 
+	-moz-transform:scale(1.1,1); 
+	-ms-transform:scale(1.1,1); 
+	-o-transform:scale(1.1,1); 
+	transform:scale(1.1,1); 
 }
 
 .shorten {
 	display:inline-block;
-	-webkit-transform:scale(1.0,0.9); /* Safari and Chrome */
-	-moz-transform:scale(1.0,0.9); /* Firefox */
-	-ms-transform:scale(1.0,0.9); /* IE 9 */
-	-o-transform:scale(1.0,0.9); /* Opera */
-	transform:scale(1.0,0.9); /* W3C */
+	-webkit-transform:scale(1.0,0.9); 
+	-moz-transform:scale(1.0,0.9); 
+	-ms-transform:scale(1.0,0.9); 
+	-o-transform:scale(1.0,0.9); 
+	transform:scale(1.0,0.9); 
 }
 
 .shorten-widen {
 	display:inline-block;
-	-webkit-transform:scale(1.1,0.9); /* Safari and Chrome */
-	-moz-transform:scale(1.1,0.9); /* Firefox */
-	-ms-transform:scale(1.1,0.9); /* IE 9 */
-	-o-transform:scale(1.1,0.9); /* Opera */
-	transform:scale(1.1,0.9); /* W3C */
+	-webkit-transform:scale(1.1,0.9); 
+	-moz-transform:scale(1.1,0.9); 
+	-ms-transform:scale(1.1,0.9); 
+	-o-transform:scale(1.1,0.9); 
+	transform:scale(1.1,0.9); 
 }
 
 .hide-small {
@@ -204,13 +205,15 @@ a:visited {
 	}
 }
 
+/*
+XS/Default size
+----------------*/
+
 .cust_container {
 	@include zeromargin;
 	margin: auto;
 	width: $xs_cont;
 }
-
-/*xs*/
 
 .navbar {
 	@include zeromargin;
@@ -269,7 +272,7 @@ a:visited {
 		#linksbar {
 			font-weight: bold;
 			font-size: 1.05em;
-			margin-top: 50px;
+			margin-top: $xs_navh;
 			margin-right: 0px;
 			background-color: $c_white;
 			.nav-link {
@@ -326,16 +329,12 @@ a:visited {
 					top: -3px;
 					position: relative;
 				}
-				.search_text {
-					display: none;
-				}
 			}
 		}
 	}
 	.bio {
 		.headshot {
 			@include imagesize(210px,289px);
-			
 		}
 		.namecard {
 			margin-top: 12px;
@@ -395,7 +394,7 @@ a:visited {
 
 #main {
 	padding-top: 39px;
-	padding-bottom: 19px;
+	padding-bottom: 3px;
 	.sm_tab_nav {
 		position: relative;
 		margin-bottom: 12px;
@@ -425,25 +424,19 @@ a:visited {
 	.tab-content {
 		#aboutme {
 			.aboutme {
+				padding-bottom: 10px;
 			}
 			.sidebar {
+				padding-top: 5px;
 				h5 {
-					padding-top: 15px;
-					padding-bottom: 5px;
 					font-weight: bold;
 					font-size: 1.0rem;
 				}
 				p {
+					padding-top: 4px;
+					padding-bottom: 16px;
 					font-size: 0.9rem;
 				}
-			}
-		}
-		#listings {
-			iframe {
-				border:0;
-				width:600px;
-				max-width:100%;
-				height:450px;
 			}
 		}
 	}
@@ -497,9 +490,11 @@ a:visited {
 	}
 }
 
-/*Media Queries*/
+/*
+Media Queries
+-------------*/
 
-/*sm*/
+/*SMALL SIZE*/
 @media (min-width: $sm_breakpoint) {
 	.cust_container {
 		width: $sm_cont;
@@ -510,17 +505,106 @@ a:visited {
 	.show-small {
 		display: none;
 	}
+	
 	.navbar {
 		height: $sm_navh;
-		.logo div {
-			height: $sm_navh;
-			width: 151px;
-			background-image: url("../img/TEN-logo.svg");
+		.logo {
+			margin-left: 20px;
+			div {
+				height: $sm_navh;
+				width: 153px;
+				background-image: url("../img/TEN-logo.svg");
+			}
+		}
+		.navbar-links {
+			.permlinks {
+				height: $sm_navh;
+				top: 0px;
+				margin-right: 7px;
+				padding-top: 4px;
+				.navbar-nav {
+					.nav-item {
+						margin-left: 15px;
+					}
+				}
+			}
+			#linksbar {
+				margin-top: $sm_navh;
+			}
 		}
 	}
+	
+	.jumbotron {
+		height: $sm_jumbh;
+		.quicksearch {
+			display: flex;
+			flex-direction: row;
+			form {
+				input {
+					width: 222px;
+				}
+				.search_btn {
+					margin-left: $gutter;
+					border-top-left-radius: 4px;
+					border-bottom-left-radius: 4px;
+					width: 95px;
+					
+				}
+			}
+			.srch_opts {
+				display: flex;
+				margin-left: $gutter;
+				width: 350px;
+				padding: 1px;
+				height: $qslh;
+				justify-content: space-between;
+				align-items: center;
+				a {
+					font-weight: bold;
+					color: $c_white;
+					text-decoration: underline;
+					cursor: pointer;
+					font-size: 0.9rem;
+				}
+				a:hover {
+					color: $c_dkteal;
+				}
+			}
+		}
+		.bio {
+			display: flex;
+			.headshot {
+				@include imagesize(158px,218px);
+			}
+			.namecard {
+				margin-left: $gutter + 1px;
+				margin-top: 9px;
+				p {
+					margin-top: 13px;
+				}
+				.contact_btn{
+					margin-top: 9px;
+					width: 221px;
+				}
+				.socialicons {
+					padding-top: 21px;
+					width: 230px;
+					margin-left: -6px;
+				}
+			}
+			.contactlinks {
+				margin-left: $gutter + 2px;
+				margin-top: 13px;
+			}
+		}
+		
+	}
+	
 	#main {
-		.nav {
+		padding-top: 27px;
+		#desktoptabs {
 			width: $sm_cont;
+			margin-bottom: 33px;
 			.nav-item {
 				width: 25%;
 				text-align: center;
@@ -528,7 +612,7 @@ a:visited {
 					padding-bottom: 0.4rem;
 					color: $c_ltgray;
 					font-weight: bold;
-					font-size: 1.1rem;
+					font-size: 1.0rem;
 					border-bottom: 2px solid $c_vlgray;
 				}
 				a:hover {
@@ -538,6 +622,56 @@ a:visited {
 				.active {
 					border-bottom: 2px solid $c_dkteal;
 					color: $c_dkteal;
+				}
+			}
+		}
+		.tab-content {
+			#aboutme {
+				.am_container {
+					display: flex;
+					.aboutme {
+						width: 74%;
+						line-height: 1.75rem;
+					}
+					.sidebar {
+						margin-left: $gutter;
+						p {
+							padding-bottom: 26px;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	.footer {
+		height: $sm_footh;
+		.cust_container {
+			display: flex;
+			.locations {
+				width: 50%;
+				text-align: left;
+				font-size: 1.0rem;
+				div {
+					padding-bottom: 2px;
+				}
+				.socialicons {
+					width: 216px;
+				}
+			}
+			.copyright {
+				width: 50%;
+				text-align: right;
+				padding-top: 0px;
+				.links {
+					width: 316px;
+					float: right;
+				}
+				.copy {
+					padding-top: 9px;
+				}
+				.realty-icons span {
+					padding: 1px 0px 0px 18px;
 				}
 			}
 		}

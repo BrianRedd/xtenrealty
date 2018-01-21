@@ -69,8 +69,9 @@
 
 /*Variables*/
 /*Mixins*/
-/**/
-/*Main CSS*/
+/*
+General CSS
+-----------*/
 *, *:before, *:after {
   box-sizing: border-box; }
 
@@ -91,41 +92,26 @@ a:visited {
 .widen {
   display: inline-block;
   -webkit-transform: scale(1.1, 1);
-  /* Safari and Chrome */
   -moz-transform: scale(1.1, 1);
-  /* Firefox */
   -ms-transform: scale(1.1, 1);
-  /* IE 9 */
   -o-transform: scale(1.1, 1);
-  /* Opera */
-  transform: scale(1.1, 1);
-  /* W3C */ }
+  transform: scale(1.1, 1); }
 
 .shorten {
   display: inline-block;
   -webkit-transform: scale(1, 0.9);
-  /* Safari and Chrome */
   -moz-transform: scale(1, 0.9);
-  /* Firefox */
   -ms-transform: scale(1, 0.9);
-  /* IE 9 */
   -o-transform: scale(1, 0.9);
-  /* Opera */
-  transform: scale(1, 0.9);
-  /* W3C */ }
+  transform: scale(1, 0.9); }
 
 .shorten-widen {
   display: inline-block;
   -webkit-transform: scale(1.1, 0.9);
-  /* Safari and Chrome */
   -moz-transform: scale(1.1, 0.9);
-  /* Firefox */
   -ms-transform: scale(1.1, 0.9);
-  /* IE 9 */
   -o-transform: scale(1.1, 0.9);
-  /* Opera */
-  transform: scale(1.1, 0.9);
-  /* W3C */ }
+  transform: scale(1.1, 0.9); }
 
 .hide-small {
   display: none; }
@@ -147,13 +133,15 @@ a:visited {
   #officeModal .modal-content .modal-footer {
     color: #237377; }
 
+/*
+XS/Default size
+----------------*/
 .cust_container {
   padding: 0px;
   margin: 0px;
   margin: auto;
   width: 290px; }
 
-/*xs*/
 .navbar {
   padding: 0px;
   margin: 0px;
@@ -254,8 +242,6 @@ a:visited {
           font-size: 27px;
           top: -3px;
           position: relative; }
-        .jumbotron .quicksearch form .search_btn .search_text {
-          display: none; }
   .jumbotron .bio .headshot {
     width: 210px;
     height: 289px; }
@@ -300,7 +286,7 @@ a:visited {
 
 #main {
   padding-top: 39px;
-  padding-bottom: 19px; }
+  padding-bottom: 3px; }
   #main .sm_tab_nav {
     position: relative;
     margin-bottom: 12px; }
@@ -322,18 +308,17 @@ a:visited {
     color: #237377;
     right: 11px;
     top: 16px; }
-  #main .tab-content #aboutme .sidebar h5 {
-    padding-top: 15px;
-    padding-bottom: 5px;
-    font-weight: bold;
-    font-size: 1.0rem; }
-  #main .tab-content #aboutme .sidebar p {
-    font-size: 0.9rem; }
-  #main .tab-content #listings iframe {
-    border: 0;
-    width: 600px;
-    max-width: 100%;
-    height: 450px; }
+  #main .tab-content #aboutme .aboutme {
+    padding-bottom: 10px; }
+  #main .tab-content #aboutme .sidebar {
+    padding-top: 5px; }
+    #main .tab-content #aboutme .sidebar h5 {
+      font-weight: bold;
+      font-size: 1.0rem; }
+    #main .tab-content #aboutme .sidebar p {
+      padding-top: 4px;
+      padding-bottom: 16px;
+      font-size: 0.9rem; }
 
 .footer {
   position: relative;
@@ -371,8 +356,10 @@ a:visited {
       .footer .copyright .realty-icons span {
         padding: 1px 9px 0px 9px; }
 
-/*Media Queries*/
-/*sm*/
+/*
+Media Queries
+-------------*/
+/*SMALL SIZE*/
 @media (min-width: 728px) {
   .cust_container {
     width: 726px; }
@@ -382,23 +369,117 @@ a:visited {
     display: none; }
   .navbar {
     height: 54px; }
-    .navbar .logo div {
+    .navbar .logo {
+      margin-left: 20px; }
+      .navbar .logo div {
+        height: 54px;
+        width: 153px;
+        background-image: url("../img/TEN-logo.svg"); }
+    .navbar .navbar-links .permlinks {
       height: 54px;
-      width: 151px;
-      background-image: url("../img/TEN-logo.svg"); }
-  #main .nav {
-    width: 726px; }
-    #main .nav .nav-item {
-      width: 25%;
-      text-align: center; }
-      #main .nav .nav-item a {
-        padding-bottom: 0.4rem;
-        color: #AAA;
-        font-weight: bold;
-        font-size: 1.1rem;
-        border-bottom: 2px solid #EEE; }
-      #main .nav .nav-item a:hover {
-        color: #237377; }
-      #main .nav .nav-item .active {
-        border-bottom: 2px solid #237377;
-        color: #237377; } }
+      top: 0px;
+      margin-right: 7px;
+      padding-top: 4px; }
+      .navbar .navbar-links .permlinks .navbar-nav .nav-item {
+        margin-left: 15px; }
+    .navbar .navbar-links #linksbar {
+      margin-top: 54px; }
+  .jumbotron {
+    height: 278px; }
+    .jumbotron .quicksearch {
+      display: flex;
+      flex-direction: row; }
+      .jumbotron .quicksearch form input {
+        width: 222px; }
+      .jumbotron .quicksearch form .search_btn {
+        margin-left: 30px;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        width: 95px; }
+      .jumbotron .quicksearch .srch_opts {
+        display: flex;
+        margin-left: 30px;
+        width: 350px;
+        padding: 1px;
+        height: 40px;
+        justify-content: space-between;
+        align-items: center; }
+        .jumbotron .quicksearch .srch_opts a {
+          font-weight: bold;
+          color: #FFF;
+          text-decoration: underline;
+          cursor: pointer;
+          font-size: 0.9rem; }
+        .jumbotron .quicksearch .srch_opts a:hover {
+          color: #237377; }
+    .jumbotron .bio {
+      display: flex; }
+      .jumbotron .bio .headshot {
+        width: 158px;
+        height: 218px; }
+      .jumbotron .bio .namecard {
+        margin-left: 31px;
+        margin-top: 9px; }
+        .jumbotron .bio .namecard p {
+          margin-top: 13px; }
+        .jumbotron .bio .namecard .contact_btn {
+          margin-top: 9px;
+          width: 221px; }
+        .jumbotron .bio .namecard .socialicons {
+          padding-top: 21px;
+          width: 230px;
+          margin-left: -6px; }
+      .jumbotron .bio .contactlinks {
+        margin-left: 32px;
+        margin-top: 13px; }
+  #main {
+    padding-top: 27px; }
+    #main #desktoptabs {
+      width: 726px;
+      margin-bottom: 33px; }
+      #main #desktoptabs .nav-item {
+        width: 25%;
+        text-align: center; }
+        #main #desktoptabs .nav-item a {
+          padding-bottom: 0.4rem;
+          color: #AAA;
+          font-weight: bold;
+          font-size: 1.0rem;
+          border-bottom: 2px solid #EEE; }
+        #main #desktoptabs .nav-item a:hover {
+          color: #237377; }
+        #main #desktoptabs .nav-item .active {
+          border-bottom: 2px solid #237377;
+          color: #237377; }
+    #main .tab-content #aboutme .am_container {
+      display: flex; }
+      #main .tab-content #aboutme .am_container .aboutme {
+        width: 74%;
+        line-height: 1.75rem; }
+      #main .tab-content #aboutme .am_container .sidebar {
+        margin-left: 30px; }
+        #main .tab-content #aboutme .am_container .sidebar p {
+          padding-bottom: 26px; }
+  .footer {
+    height: 151px; }
+    .footer .cust_container {
+      display: flex; }
+      .footer .cust_container .locations {
+        width: 50%;
+        text-align: left;
+        font-size: 1.0rem; }
+        .footer .cust_container .locations div {
+          padding-bottom: 2px; }
+        .footer .cust_container .locations .socialicons {
+          width: 216px; }
+      .footer .cust_container .copyright {
+        width: 50%;
+        text-align: right;
+        padding-top: 0px; }
+        .footer .cust_container .copyright .links {
+          width: 316px;
+          float: right; }
+        .footer .cust_container .copyright .copy {
+          padding-top: 9px; }
+        .footer .cust_container .copyright .realty-icons span {
+          padding: 1px 0px 0px 18px; } }
