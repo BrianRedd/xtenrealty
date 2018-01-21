@@ -4,29 +4,72 @@
 
 * Author: R. Brian Redd 
 --------------------------------------------------------*/
+/*Fonts*/
+@font-face {
+  font-family: 'xten_icons';
+  src: url("../fonts/xten_icons.eot");
+  src: url("../fonts/xten_icons.eot") format("embedded-opentype"), url("../fonts/xten_icons.ttf") format("truetype"), url("../fonts/xten_icons.woff") format("woff"), url("../fonts/xten_icons.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'xten_icons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-realtor:before {
+  content: "\e900"; }
+
+.icon-equal-housing:before {
+  content: "\e90d"; }
+
+.icon-account:before {
+  content: "\e901"; }
+
+.icon-angle-down:before {
+  content: "\e902"; }
+
+.icon-contact:before {
+  content: "\e903"; }
+
+.icon-enewsletter:before {
+  content: "\e904"; }
+
+.icon-facebook:before {
+  content: "\e905"; }
+
+.icon-instagram:before {
+  content: "\e906"; }
+
+.icon-linkedin:before {
+  content: "\e907"; }
+
+.icon-office:before {
+  content: "\e908"; }
+
+.icon-search:before {
+  content: "\e909"; }
+
+.icon-twitter:before {
+  content: "\e90a"; }
+
+.icon-website:before {
+  content: "\e90b"; }
+
+.icon-youtube:before {
+  content: "\e90c"; }
+
 /*Variables*/
 /*Mixins*/
-/*Custom Icons*/
-.cust_icon {
-  display: inline-block;
-  width: 24px;
-  height: 23px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: contain; }
-
-.icon_contact {
-  background-image: url("../img/contact_teal.svg"); }
-
-.icon_webpage {
-  background-image: url("../img/website_teal.svg"); }
-
-.icon_office {
-  background-image: url("../img/office_teal.png"); }
-
-.icon_newsletter {
-  background-image: url("../img/enewsletter_teal.png"); }
-
+/**/
 /*Main CSS*/
 *, *:before, *:after {
   box-sizing: border-box; }
@@ -36,7 +79,14 @@ html, body {
   padding: 0px;
   margin: 0px;
   font-family: 'Lato', sans-serif;
+  background-color: #FFF;
   overflow-x: hidden; }
+
+a,
+a:hover,
+a:focus,
+a:visited {
+  text-decoration: none; }
 
 .widen {
   display: inline-block;
@@ -64,35 +114,69 @@ html, body {
   transform: scale(1, 0.9);
   /* W3C */ }
 
-/*x-small*/
-.container {
-  width: 100%; }
+.shorten-widen {
+  display: inline-block;
+  -webkit-transform: scale(1.1, 0.9);
+  /* Safari and Chrome */
+  -moz-transform: scale(1.1, 0.9);
+  /* Firefox */
+  -ms-transform: scale(1.1, 0.9);
+  /* IE 9 */
+  -o-transform: scale(1.1, 0.9);
+  /* Opera */
+  transform: scale(1.1, 0.9);
+  /* W3C */ }
 
-.navbar {
-  position: relative;
-  background-color: #FFF;
-  border-bottom: 1px solid #AAA;
-  color: #323232;
-  height: 50px;
+.hide-small {
+  display: none; }
+
+#officeModal .modal-content {
   padding: 0px;
-  margin: 0px; }
+  margin: 0px;
+  background-image: url("../img/QS_BG.png");
+  background-color: #EEE;
+  background-repeat-y: no-repeat;
+  background-position: 0px -2px; }
+  #officeModal .modal-content .modal-header {
+    color: #FFF; }
+    #officeModal .modal-content .modal-header button {
+      color: #FFF; }
+  #officeModal .modal-content .modal-body iframe {
+    height: 100%;
+    width: 100%; }
+  #officeModal .modal-content .modal-footer {
+    color: #237377; }
+
+.cust_container {
+  padding: 0px;
+  margin: 0px;
+  margin: auto;
+  width: 290px; }
+
+/*xs*/
+.navbar {
+  padding: 0px;
+  margin: 0px;
+  height: 50px;
+  z-index: 1; }
   .navbar .logo {
-    width: 55px;
-    height: 33px; }
-    .navbar .logo .logo_lg {
-      display: none; }
-    .navbar .logo img {
-      margin-left: 11px;
-      margin-top: 4px;
-      width: 55px;
-      height: 33px; }
+    margin-left: 15px; }
+    .navbar .logo div {
+      height: 50px;
+      width: 50px;
+      background-image: url("../img/TEN-logo-mark.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
   .navbar .navbar-links {
     position: absolute;
     right: 0px; }
     .navbar .navbar-links .permlinks {
-      right: 2px;
-      font-size: 0.8em;
-      position: absolute; }
+      height: 50px;
+      right: 0px;
+      font-size: 0.8rem;
+      position: absolute;
+      overflow: hidden; }
       .navbar .navbar-links .permlinks .navbar-nav {
         display: flex;
         -webkit-box-orient: horizontal;
@@ -100,18 +184,23 @@ html, body {
         -ms-flex-direction: row;
         flex-direction: row; }
         .navbar .navbar-links .permlinks .navbar-nav .nav-item {
-          margin-left: 11px;
-          width: 59px;
-          height: 45px;
-          overflow: hidden;
+          margin-left: 10px;
+          width: 60px;
+          border: 0px;
           border-radius: 0px; }
           .navbar .navbar-links .permlinks .navbar-nav .nav-item .nav-link {
             color: #666;
             text-align: center; }
+            .navbar .navbar-links .permlinks .navbar-nav .nav-item .nav-link i {
+              position: relative;
+              color: #2399A6;
+              font-size: 16px;
+              top: 2px; }
+            .navbar .navbar-links .permlinks .navbar-nav .nav-item .nav-link .txt-menu {
+              margin-top: 1px; }
           .navbar .navbar-links .permlinks .navbar-nav .nav-item .nav-link:hover {
             color: #237377;
-            background-color: #EEE;
-            border-radius: 2px; }
+            background-color: #EEE; }
     .navbar .navbar-links #linksbar {
       font-weight: bold;
       font-size: 1.05em;
@@ -124,386 +213,192 @@ html, body {
         color: #323232; }
       .navbar .navbar-links #linksbar .nav-link:hover {
         color: #237377;
-        background-color: #EEE;
-        border-radius: 2px; }
+        background-color: #EEE; }
 
 .jumbotron {
-  background-image: url("../img/QS_BG.png");
   padding: 0px;
   margin: 0px;
-  position: relative;
-  width: 100%;
+  background-image: url("../img/QS_BG.png");
   background-color: #EEE;
   background-repeat-y: no-repeat;
   background-position: 0px -2px;
   border-radius: 0px;
-  height: 763px; }
+  height: 764px; }
   .jumbotron .btn {
     background-color: #237377;
     text-align: center;
-    color: #FFFEFE;
+    color: #FFF;
     font-size: 1.1rem;
-    cursor: pointer; }
+    cursor: pointer;
+    border-radius: 4px; }
   .jumbotron .btn:hover {
     background-color: #2399A6; }
   .jumbotron .quicksearch {
-    height: 61px;
-    line-height: 40px;
-    align-items: center; }
+    height: 60px;
+    padding-top: 10px;
+    margin-bottom: 1px; }
     .jumbotron .quicksearch form {
-      height: 40px; }
+      display: flex; }
       .jumbotron .quicksearch form input {
+        width: 210px;
         height: 40px;
         border: none;
         border-radius: 0px;
         font-size: 0.9em; }
       .jumbotron .quicksearch form .search_btn {
-        height: 40px; }
-    .jumbotron .quicksearch .srch_opts {
-      display: none; }
-      .jumbotron .quicksearch .srch_opts a {
-        font-size: 0.85rem; }
-      .jumbotron .quicksearch .srch_opts a:hover {
-        color: #237377; }
+        height: 40px;
+        width: 80px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px; }
+        .jumbotron .quicksearch form .search_btn .icon-search {
+          font-size: 27px;
+          top: -3px;
+          position: relative; }
+        .jumbotron .quicksearch form .search_btn .search_text {
+          display: none; }
   .jumbotron .bio .headshot {
-    position: relative;
     width: 210px;
     height: 289px; }
-  .jumbotron .bio .namecard h2 {
-    font-size: 2.45rem; }
-  .jumbotron .bio .namecard p {
-    color: #AAA;
-    font-size: 0.9rem; }
-  .jumbotron .bio .namecard .socialicons {
-    font-size: 1.65rem; }
-    .jumbotron .bio .namecard .socialicons a {
-      color: #666; }
-    .jumbotron .bio .namecard .socialicons a:hover {
-      color: #237377; }
-  .jumbotron .contactlinks {
-    font-size: 1.1rem;
-    font-weight: bold; }
-    .jumbotron .contactlinks p {
-      margin-bottom: 0.9rem; }
-      .jumbotron .contactlinks p a {
+  .jumbotron .bio .namecard {
+    margin-top: 12px; }
+    .jumbotron .bio .namecard h2 {
+      font-size: 2.45rem; }
+    .jumbotron .bio .namecard p {
+      margin-top: -4px;
+      color: #AAA;
+      font-size: 0.9rem; }
+    .jumbotron .bio .namecard .contact_btn {
+      height: 42px;
+      margin-top: -1px;
+      width: 290px; }
+    .jumbotron .bio .namecard .socialicons {
+      padding-top: 13px;
+      font-size: 1.65rem; }
+      .jumbotron .bio .namecard .socialicons a {
+        color: #666; }
+      .jumbotron .bio .namecard .socialicons a:hover {
         color: #237377; }
-        .jumbotron .contactlinks p a span {
-          position: relative; }
-    .jumbotron .contactlinks p:hover a {
-      text-decoration: none;
-      color: #666; }
-      .jumbotron .contactlinks p:hover a .cust_icon {
-        opacity: 0.5; }
-      .jumbotron .contactlinks p:hover a .icon_contact {
-        background-image: url("../img/contact.svg"); }
-      .jumbotron .contactlinks p:hover a .icon_webpage {
-        background-image: url("../img/website.svg"); }
-      .jumbotron .contactlinks p:hover a .icon_office {
-        background-image: url("../img/office.svg"); }
-      .jumbotron .contactlinks p:hover a .icon_newsletter {
-        background-image: url("../img/enewsletter.svg"); }
-
-#body .nav .nav-item {
-  text-align: center; }
-  #body .nav .nav-item a {
-    padding-bottom: 0.4rem;
-    color: #AAA;
+  .jumbotron .bio .contactlinks {
+    font-size: 0.9rem;
     font-weight: bold;
-    font-size: 1.1rem;
-    border-bottom: 2px solid #EEE; }
-  #body .nav .nav-item a:hover {
-    color: #237377; }
-  #body .nav .nav-item .active {
-    border-bottom: 2px solid #237377;
-    color: #237377; }
+    margin-top: 26px; }
+    .jumbotron .bio .contactlinks p {
+      line-height: 30px;
+      margin-bottom: 14px; }
+      .jumbotron .bio .contactlinks p a {
+        color: #237377; }
+        .jumbotron .bio .contactlinks p a .icon {
+          position: relative;
+          color: #2399A6;
+          font-size: 1.55rem;
+          top: 2px;
+          margin-right: 25px; }
+    .jumbotron .bio .contactlinks p:hover a {
+      color: #666; }
+      .jumbotron .bio .contactlinks p:hover a .icon {
+        color: #666; }
 
-#body .tab-content #aboutme .sidebar h5 {
-  font-weight: bold;
-  font-size: 1.0rem; }
-
-#body .tab-content #aboutme .sidebar p {
-  font-size: 0.9rem; }
-
-#body .tab-content #listings iframe {
-  border: 0;
-  width: 600px;
-  max-width: 100%;
-  height: 450px; }
+#main {
+  padding-top: 39px;
+  padding-bottom: 19px; }
+  #main .sm_tab_nav {
+    position: relative;
+    margin-bottom: 12px; }
+    #main .sm_tab_nav #mobiletabs {
+      font-weight: bold;
+      color: #237377;
+      width: 290px;
+      height: 40px;
+      padding-left: 9px;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none; }
+    #main .sm_tab_nav select::-ms-expand {
+      display: none; }
+  #main .sm_tab_nav:after {
+    position: absolute;
+    content: "\e902";
+    font: 10px "xten_icons";
+    color: #237377;
+    right: 11px;
+    top: 16px; }
+  #main .tab-content #aboutme .sidebar h5 {
+    padding-top: 15px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    font-size: 1.0rem; }
+  #main .tab-content #aboutme .sidebar p {
+    font-size: 0.9rem; }
+  #main .tab-content #listings iframe {
+    border: 0;
+    width: 600px;
+    max-width: 100%;
+    height: 450px; }
 
 .footer {
   position: relative;
+  height: 279px;
   background-color: #2399A6;
-  color: #FFF; }
+  color: #FFF;
+  padding-top: 26px; }
   .footer a {
-    color: #FFFEFE;
+    color: #FFF;
     text-decoration: none; }
   .footer a:hover {
     color: #AAA; }
-    .footer a:hover img {
-      filter: invert(65%); }
-  .footer img {
-    filter: invert(100%); }
   .footer .locations {
-    text-align: left; }
+    text-align: center;
+    font-size: 1.05rem; }
+    .footer .locations i {
+      margin-right: 5px; }
     .footer .locations .socialicons {
-      font-size: 1.65rem; }
+      font-size: 1.5rem;
+      padding-top: 18px; }
   .footer .copyright {
-    text-align: right; }
-    .footer .copyright .links a {
-      text-decoration: underline; }
-    .footer .copyright .copy {
-      font-size: 0.8rem; }
-
-/*Updated media queries*/
-/*small*/
-@media (min-width: 727px) {
-  .container {
-    width: 769px;
-    left: 19px;
-    padding-left: 0px;
-    padding-right: 0px; }
-  .navbar {
-    height: 56px; }
-    .navbar .logo {
-      width: 151px;
-      height: 35px; }
-      .navbar .logo .logo_lg {
-        display: block; }
-      .navbar .logo .logo_sm {
-        display: none; }
-      .navbar .logo img {
-        margin-left: 20px;
-        margin-top: 8px;
-        width: 151px;
-        height: 35px; }
-    .navbar .navbar-links .permlinks {
-      top: 4px;
-      right: 6px; }
-      .navbar .navbar-links .permlinks .navbar-nav .nav-item {
-        width: 62px; }
-    .navbar .navbar-links #linksbar {
-      margin-top: 56px; }
-  .jumbotron {
-    height: 278px; }
-    .jumbotron .quicksearch form {
-      padding-left: 0px; }
-      .jumbotron .quicksearch form .col-6 {
-        z-index: 1; }
-      .jumbotron .quicksearch form input {
-        width: 222px;
-        z-index: 1; }
-      .jumbotron .quicksearch form .search_btn {
-        width: 96px;
-        margin-top: -5px;
-        margin-left: 76px; }
-    .jumbotron .quicksearch .srch_opts {
+    padding-top: 16px;
+    text-align: center; }
+    .footer .copyright .links {
       display: flex;
-      justify-content: space-between;
-      padding-left: 60px;
-      width: 400px; }
-      .jumbotron .quicksearch .srch_opts a {
-        font-weight: bold;
-        color: #FFFEFE;
-        text-decoration: underline;
-        cursor: pointer;
-        font-size: 0.85rem; }
-      .jumbotron .quicksearch .srch_opts a:hover {
-        color: #237377; }
-    .jumbotron .bio .headshot {
-      width: 159px;
-      height: 216px;
-      left: -14px; }
-    .jumbotron .bio .namecard {
-      margin-left: -10px;
-      padding-top: 8px; }
-      .jumbotron .bio .namecard h2 {
-        margin-left: -2px; }
-      .jumbotron .bio .namecard p {
-        padding-top: 6px; }
-      .jumbotron .bio .namecard .contact_btn {
-        width: 221px;
-        margin-top: 9px;
-        margin-left: 1px;
-        height: 41px; }
-      .jumbotron .bio .namecard .socialicons {
-        width: 221px;
-        padding-top: 20px; }
-    .jumbotron .contactlinks {
-      padding-top: 12px;
-      margin-left: -4px; }
-      .jumbotron .contactlinks p a span {
-        margin-right: 18px;
-        top: 4px; }
-  #body {
-    margin-top: 80px;
-    padding-right: 32px; }
-    #body .nav .nav-item {
-      padding-left: 0;
-      padding-right: 0;
-      margin-left: 0;
-      margin-right: 0; }
-      #body .nav .nav-item a {
-        margin-top: 2px; }
-    #body .tab-content {
-      margin-top: 50px;
-      line-height: 28px;
-      padding-bottom: 40px; }
-      #body .tab-content #aboutme .aboutme {
-        padding-right: 85px; }
-      #body .tab-content #aboutme .sidebar {
-        padding-left: 36px; }
-        #body .tab-content #aboutme .sidebar h5 {
-          margin-top: 7px; }
-        #body .tab-content #aboutme .sidebar p {
-          padding-bottom: 24px; }
-  .footer {
-    height: 150px;
-    width: 100%;
-    padding-top: 22px; }
-    .footer .locations {
-      margin-left: -1px;
-      margin-top: 2px; }
-      .footer .locations img {
-        margin-right: 3px;
-        margin-top: -1; }
-      .footer .locations .socialicons {
-        margin-top: 13px;
-        width: 217px; }
-    .footer .copyright {
-      padding-right: 47px; }
+      flex-direction: row;
+      justify-content: space-between; }
       .footer .copyright .links a {
-        padding-left: 30px; }
-      .footer .copyright .copy {
-        margin-top: 5px;
-        margin-bottom: 10px; }
-      .footer .copyright img {
-        margin-left: 20px; } }
+        text-decoration: underline; }
+    .footer .copyright .copy {
+      padding-top: 12px;
+      font-size: 0.8rem; }
+    .footer .copyright .realty-icons {
+      font-size: 2.25rem; }
+      .footer .copyright .realty-icons span {
+        padding: 1px 9px 0px 9px; }
 
-/*medium*/
-@media (min-width: 992px) {
-  .container {
-    width: 974px;
-    left: 16px; }
+/*Media Queries*/
+/*sm*/
+@media (min-width: 728px) {
+  .cust_container {
+    width: 726px; }
+  .hide-small {
+    display: inline-block; }
+  .show-small {
+    display: none; }
   .navbar {
-    height: 100px;
-    padding: 0px;
-    margin: 0px; }
-    .navbar .logo {
-      width: 334px;
-      height: 76px; }
-      .navbar .logo img {
-        margin-left: 37px;
-        width: 334px;
-        height: 76px; }
-    .navbar .navbar-links .permlinks {
-      right: 0px;
-      top: 2px; }
-      .navbar .navbar-links .permlinks .cust-toggler {
-        display: none; }
-    .navbar .navbar-links #linksbar {
-      margin-top: 50px;
-      margin-right: 0px; }
-      .navbar .navbar-links #linksbar .nav-link {
-        margin: 0 0 0 32px;
-        text-align: left; }
-      .navbar .navbar-links #linksbar .nav-link:hover {
-        color: #237377;
-        background-color: #EEE;
-        border-radius: 2px; }
-  .jumbotron {
-    height: 354px; }
-    .jumbotron .quicksearch form {
-      padding-left: 0px; }
-      .jumbotron .quicksearch form input {
-        width: 214px; }
-      .jumbotron .quicksearch form .search_btn {
-        width: 132px;
-        margin-top: -3px;
-        margin-left: 14px; }
-    .jumbotron .quicksearch .srch_opts {
-      width: 482px; }
-      .jumbotron .quicksearch .srch_opts a {
-        font-size: 1.0rem; }
-    .jumbotron .bio .headshot {
-      width: 212px;
-      height: 293px;
-      left: -14px; }
-    .jumbotron .bio .namecard {
-      margin-left: -6px;
-      padding-top: 39px; }
-      .jumbotron .bio .namecard h2 {
-        margin-left: -2px; }
-      .jumbotron .bio .namecard p {
-        padding-top: 6px; }
-      .jumbotron .bio .namecard .contact_btn {
-        width: 212px;
-        margin-top: 9px;
-        margin-left: 1px;
-        height: 41px; }
-      .jumbotron .bio .namecard .socialicons {
-        width: 212px; }
-    .jumbotron .contactlinks {
-      padding-top: 40px;
-      margin-left: 4px; }
-      .jumbotron .contactlinks p a span {
-        margin-right: 18px;
-        top: 4px; }
-  #body {
-    margin-top: 144px;
-    padding-right: 32px; }
-    #body .nav .nav-item {
-      padding-left: 0;
-      padding-right: 0;
-      margin-left: 0;
-      margin-right: 0; }
-      #body .nav .nav-item a {
-        margin-top: 2px; }
-    #body .tab-content {
-      margin-top: 50px;
-      line-height: 28px;
-      padding-bottom: 40px; }
-      #body .tab-content #aboutme .aboutme {
-        padding-right: 85px; }
-      #body .tab-content #aboutme .sidebar {
-        padding-left: 36px; }
-        #body .tab-content #aboutme .sidebar h5 {
-          margin-top: 7px; }
-        #body .tab-content #aboutme .sidebar p {
-          padding-bottom: 24px; } }
-
-/*large*/
-@media (min-width: 1200px) {
-  .container {
-    width: 1180px;
-    left: 16px; }
-  .jumbotron {
-    height: 421px; }
-    .jumbotron .quicksearch form input {
-      width: 264px; }
-    .jumbotron .quicksearch form .search_btn {
-      width: 166px; }
-    .jumbotron .quicksearch .srch_opts {
-      padding-left: 56px;
-      width: 549px; }
-    .jumbotron .bio .headshot {
-      width: 264px;
-      height: 359px;
-      left: -14px; }
-    .jumbotron .bio .namecard {
-      padding-top: 75px; }
-      .jumbotron .bio .namecard h2 {
-        margin-left: -2px; }
-      .jumbotron .bio .namecard p {
-        padding-top: 6px; }
-      .jumbotron .bio .namecard .contact_btn {
-        width: 264px; }
-    .jumbotron .contactlinks {
-      padding-top: 73px;
-      margin-left: 12px; }
-      .jumbotron .contactlinks p a span {
-        margin-right: 18px;
-        top: 4px; }
-  .footer .locations .socialicons {
-    width: 265px; } }
-
-/*end media queries*/
+    height: 54px; }
+    .navbar .logo div {
+      height: 54px;
+      width: 151px;
+      background-image: url("../img/TEN-logo.svg"); }
+  #main .nav {
+    width: 726px; }
+    #main .nav .nav-item {
+      width: 25%;
+      text-align: center; }
+      #main .nav .nav-item a {
+        padding-bottom: 0.4rem;
+        color: #AAA;
+        font-weight: bold;
+        font-size: 1.1rem;
+        border-bottom: 2px solid #EEE; }
+      #main .nav .nav-item a:hover {
+        color: #237377; }
+      #main .nav .nav-item .active {
+        border-bottom: 2px solid #237377;
+        color: #237377; } }

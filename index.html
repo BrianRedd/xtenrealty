@@ -10,7 +10,6 @@
 	<!-- build:css css.main.css -->
 	<link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/bootstrap-social.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 	<!-- endbuild-->
@@ -19,17 +18,52 @@
 	<!-- Git Repo: https://github.com/BrianRedd/xtenrealty.git-->
 </head>
 <body>
-	<nav id="navbar" class="navbar navbar-toggleable-md fixed-top">
-		<a class="navbar-brand logo" href="./index.html">
-			<img class="logo_sm" src="img/TEN-logo-mark.svg" alt="XTEN Realty">
-			<img class="logo_lg" src="img/TEN-logo.svg" alt="XTEN Realty">
-		</a>
+
+	<!--Office Modal-->
+	<div id="officeModal" class="modal fade" role="dialog">
+		<div class="modal-dialog modal-lg" role="content">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h4 class="modal-title">Denver Office</h4>
+					<button type="button" class="close close-office-modal"><span class="fa fa-window-close"></span></button>
+				</div>
+				<div class="modal-body">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3069.8906654217185!2d-104.9155686841693!3d39.69716217945523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b840423b694bb%3A0x6e5751eb62b019df!2sbooj!5e0!3m2!1sen!2sus!4v1516247068411" frameborder="0" allowfullscreen></iframe>
+				</div>
+				<div class="modal-footer">
+					5678 Main Street, Denver, CO 80123
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--Top Navigation Bar-->
+	<nav id="navbar" class="navbar navbar-toggleable-md">
+		<a class="logo" href="./index.html" alt="XTEN Realty"><div></div></a>
 		<div class="navbar-links">
 			<div class="permlinks">
 				<ul class="navbar-nav">
-					<li class="nav-item"><a class="nav-link" href="#"><img src="img/contact_teal.svg"><br/><span class="shorten">Contact</span></a></li>
-					<li class="nav-item"><a class="nav-link" href="#"><img src="img/account_teal.svg"><br/><span class="shorten">Account</span></a></li>
-					<li class="nav-item cust-toggler" data-toggle="collapse" data-target="#linksbar"><a class="nav-link" href="#"><img src="img/menu.png"><br/><span class="shorten">Menu</span></a></li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="icon-contact"></i>
+							<br/>
+							<span class="shorten-widen">Contact</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">
+							<i class="icon-account"></i>
+							<br/>
+							<span class="shorten-widen">Account</span>
+						</a>
+					</li>
+					<li class="nav-item cust-toggler" data-toggle="collapse" data-target="#linksbar">
+						<a class="nav-link" href="#">
+							<img src="img/menu.png">
+							<br/>
+							<span class="shorten-widen txt-menu">Menu</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 			<div id="linksbar" class="collapse navbar-collapse">
@@ -43,133 +77,141 @@
 		</div>
 	</nav>
 	
+	<!--Quick Search and Bio-->
 	<header id="hero" class="jumbotron">
-		<div class="container">
-			<div class="row col-12 quicksearch">
-				<div class="row col-6">
-					<form name="quicksearch" class="col-12">
-						<div class="row form-group">
-							<div class="col-6">
-								<input type="text" class="form-control" id="add_search" placeholder="Address, City, Zip, or MLS#">
-							</div>
-							<div class="col-5">
-								<!--TO DO? Apply to MLS search?-->
-								<button type="button" class="btn search_btn"><span class="widen">Search</span></button>
-							</div>
-						</div>
-					</form>
-				</div>
-				<div class="row">
-					<div class="srch_opts">
-						<a href="#">NEW LISTINGS</a>
-						<a href="#">OPEN HOUSES</a>
-						<a href="#">MAP SEARCH</a>
-					</div>
+		<div class="cust_container">
+			<!--Quick Search-->
+			<div class=" quicksearch">
+				<form name="quicksearch">
+						<input type="text" class="form-control" id="add_search" placeholder="Address, City, Zip, or MLS#">
+						<!--TO DO? Apply to MLS search?-->
+						<button type="button" class="btn search_btn">
+							<span class="icon-search show-small"></span>
+							<span class="widen hide-small">Search</span>
+						</button>
+				</form>
+				<div class="srch_opts hide-small">
+					<a href="#">NEW LISTINGS</a>
+					<a href="#">OPEN HOUSES</a>
+					<a href="#">MAP SEARCH</a>
 				</div>
 			</div>
-			<div class="row col-12 bio">
-				<div class="col-3">
+			<!--Bio Section-->
+			<div class=" bio">
+				<div class="">
 					<img src="img/janesmith.jpg" class="headshot">
 				</div>
-				<!--TO DO: col-12 et al needs to function between 576 and 727px-->
-				<div class="col-12 col-sm-4 col-lg-3 offset-lg-1">
+				<div class="">
 					<div class="namecard">
 						<h2>Jane Smith</h2>
 						<p>REALTOR&reg;</p>
 						<button type="button" class="btn contact_btn"><span class="widen">Contact Me</span></button>
 						<div class="socialicons d-flex justify-content-between">
-							<a href="https://www.facebook.com/boojers/"><span class="fa fa-facebook-f" target="_blank"></span></a>
-							<a href="https://www.linkedin.com/company/139521/"><span class="fa fa-linkedin" target="_blank"></span></a>
-							<a href="https://twitter.com/boojers"><span class="fa fa-twitter" target="_blank"></span></a>
-							<a href="https://www.youtube.com/boojvideo"><span class="fa fa-youtube" target="_blank"></span></a>
-							<a href="https://www.instagram.com/explore/locations/93216959/booj/?hl=en" target="_blank"><span class="fa fa-instagram"></span></a>
+							<a href="https://www.facebook.com/boojers/"><span class="icon-facebook" target="_blank"></span></a>
+							<a href="https://www.linkedin.com/company/139521/"><span class="icon-linkedin" target="_blank"></span></a>
+							<a href="https://twitter.com/boojers"><span class="icon-twitter" target="_blank"></span></a>
+							<a href="https://www.youtube.com/boojvideo"><span class="icon-youtube" target="_blank"></span></a>
+							<a href="https://www.instagram.com/explore/locations/93216959/booj/?hl=en" target="_blank"><span class="icon-instagram"></span></a>
 						</div>
 					</div>
 				</div>
-				<div class="col-12 col-sm-4 offset-lg-1">
-					<div class="contactlinks">
-						<p><a href="tel:5308302150"><span class="cust_icon icon_contact"></span> 530.830.2150</a></p>
-						<p><a href="#"><span class="cust_icon icon_webpage"></span> Visit my website</a></p>
-						<!--TO DO? Modal with map?-->
-						<p><a href="#"><span class="cust_icon icon_office"></span> Denver office</a></p>
-						<p><a href="#"><span class="cust_icon icon_newsletter"></span> eNewsletter Sign Up</a></p>
-					</div>
+				<div class="contactlinks">
+					<p>
+						<a href="tel:5308302150">
+							<span class="icon icon-contact"></span><span class="widen">530.830.2150</span>
+						</a>
+					</p>
+					<p>
+						<a href="#">
+							<span class="icon icon-website"></span><span class="widen">Visit my website</span>
+						</a>
+					</p>
+					<p>
+						<a href="#" target="modal_office">
+							<span class="icon icon-office"></span><span class="widen">Denver office</span>
+						</a>
+					</p>
+					<p>
+						<a href="#">
+							<span class="icon icon-enewsletter"></span><span class="widen">eNewsletter Sign Up</span>
+						</a>
+					</p>
 				</div>
 			</div>
 		</div>
 	</header>
 	
-	<div id="body" class="container">
-		<div class="row row-content">
-			<div class="col-12">
-				<!--TO DO: Drop down for small screens-->
-				<ul class="nav">
-					<li class="nav-item col-3">
-						<a class="nav-link active" href="#aboutme" role="tab" data-toggle="tab"><span class="widen">About Me</span></a>
-					</li>
-					<li class="nav-item col-3">
-						<a class="nav-link" href="#listings" role="tab" data-toggle="tab"><span class="widen">My Listings</span></a>
-					</li>
-					<li class="nav-item col-3">
-						<a class="nav-link" href="#solds" role="tab" data-toggle="tab"><span class="widen">My Solds</span></a>
-					</li>
-					<li class="nav-item col-3">
-						<a class="nav-link" href="#testimonials" role="tab" data-toggle="tab"><span class="widen">Testimonials</span></a>
-					</li>
-				</ul>
-				<div class="tab-content">
-					<div role="tabpanel" class="tab-pane fade show active row" id="aboutme">
-						<div class="col-12 row row-content">
-							<div class="col-9 aboutme">
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-							</div>
-							<div class="col-3 sidebar">
-								<h5>LANGUAGE</h5>
-								<p>Dutch, Finnish, Spanish</p>
-								<h5>DESIGNATIONS</h5>
-								<p>CRS, GRI, CNE</p>
-							</div>
-						</div>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="listings">
-						<div class="row justify-content-center">
-							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3069.8906654217185!2d-104.9155686841693!3d39.69716217945523!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b840423b694bb%3A0x6e5751eb62b019df!2sbooj!5e0!3m2!1sen!2sus!4v1516247068411" frameborder="0" allowfullscreen></iframe>
-						</div>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="solds">
-						<p>COMING SOON!</p>
-					</div>
-					<div role="tabpanel" class="tab-pane fade" id="testimonials">
-						<p>COMING SOON!</p>
-					</div>
+	<!--Main Content; Tabs in Desktop and Drop down in Mobile-->
+	<div id="main" class="cust_container">
+		<div class="show-small sm_tab_nav">
+			<select id="mobiletabs">
+				<option value="aboutme" selected="selected">About Me</option>
+				<option value="listings">My Listings</option>
+				<option value="solds">My Solds</option>
+				<option value="testimonials">Testimonials</option>
+			</select>
+		</div>
+		<div class="hide-small">
+			<ul class="nav" id="desktoptabs">
+				<li class="nav-item ">
+					<a class="nav-link active" href="#aboutme" role="tab" data-toggle="tab"><span class="widen">About Me</span></a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link" href="#listings" role="tab" data-toggle="tab"><span class="widen">My Listings</span></a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link" href="#solds" role="tab" data-toggle="tab"><span class="widen">My Solds</span></a>
+				</li>
+				<li class="nav-item ">
+					<a class="nav-link" href="#testimonials" role="tab" data-toggle="tab"><span class="widen">Testimonials</span></a>
+				</li>
+			</ul>
+		</div>
+		<div class="tab-content">
+			<div role="tabpanel" class="tab-pane fade show active " id="aboutme">
+				<div class="aboutme">
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 				</div>
+				<div class="sidebar">
+					<h5>LANGUAGE</h5>
+					<p>Dutch, Finnish, Spanish</p>
+					<h5>DESIGNATIONS</h5>
+					<p>CRS, GRI, CNE</p>
+				</div>
+			</div>
+			<div role="tabpanel" class="tab-pane fade" id="listings">
+				<p>MY LISTINGS, COMING SOON!</p>
+			</div>
+			<div role="tabpanel" class="tab-pane fade" id="solds">
+				<p>MY SOLDS, COMING SOON!</p>
+			</div>
+			<div role="tabpanel" class="tab-pane fade" id="testimonials">
+				<p>TESTIMONIALS, COMING SOON!</p>
 			</div>
 		</div>
 	</div>
 	
 	<footer id="footer" class="footer">
-		<div class="container">
-			<div class="row align-content-center">
-				<div class="col locations">
-					<div><a href="tel:+18002344567"><img src="img/contact.svg"> 1-800-234-4567</a></div>
-					<div>5678 Main Street, Denver, CO 80123</div>
-					<div class="socialicons d-flex justify-content-between">
-						<a href="https://www.facebook.com/boojers/"><span class="fa fa-facebook-f" target="_blank"></span></a>
-						<a href="https://www.linkedin.com/company/139521/"><span class="fa fa-linkedin" target="_blank"></span></a>
-						<a href="https://twitter.com/boojers"><span class="fa fa-twitter" target="_blank"></span></a>
-						<a href="https://www.youtube.com/boojvideo"><span class="fa fa-youtube" target="_blank"></span></a>
-						<a href="https://www.instagram.com/explore/locations/93216959/booj/?hl=en" target="_blank"><span class="fa fa-instagram"></span></a>
-					</div>
+		<div class="cust_container">
+			<div class="locations">
+				<div><a href="tel:+18002344567"><i class="icon-contact"></i>1-800-234-4567</a></div>
+				<div>5678 Main Street, Denver, CO 80123</div>
+				<div class="socialicons d-flex justify-content-between">
+					<a href="https://www.facebook.com/boojers/" target="_blank"><span class="icon-facebook"></span></a>
+					<a href="https://www.linkedin.com/company/139521/" target="_blank"><span class="icon-linkedin"></span></a>
+					<a href="https://twitter.com/boojers" target="_blank"><span class="icon-twitter"></span></a>
+					<a href="https://www.youtube.com/boojvideo" target="_blank"><span class="icon-youtube"></span></a>
+					<a href="https://www.instagram.com/explore/locations/93216959/booj/?hl=en" target="_blank"><span class="icon-instagram"></span></a>
 				</div>
-				<div class="col copyright">
-					<div class="links">
-						<a href="#"><span class+"widen">Site Map</span></a>
-						<a href="#"><span class+"widen">Terms of Use</span></a>
-						<a href="#"><span class+"widen">Privacy Policy</span></a>
-					</div>
-					<div class="copy">&copy; 2016 TEN Realty. All Rights Reserved.</div>
-					<div><img src="img/realtor.svg"><img src="img/equal-housing.svg"></div>
+			</div>
+			<div class="copyright">
+				<div class="links">
+					<a href="#">Site Map</a>
+					<a href="#">Terms of Use</a>
+					<a href="#">Privacy Policy</a>
 				</div>
+				<div class="copy shorten">&copy; 2016 TEN Realty. All Rights Reserved.</div>
+				<div class="realty-icons"><span class="icon-realtor"></span><span class="icon-equal-housing"></span></div>
 			</div>
 		</div>
 	</footer>
